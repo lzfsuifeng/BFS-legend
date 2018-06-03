@@ -1,0 +1,53 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<siteMap xmlns="http://schemas.microsoft.com/AspNet/SiteMap-File-1.0" >
+    <siteMapNode  title=""  description="根节点">
+      
+      <siteMapNode title="首页资讯管理"  description="父节点" >
+        <siteMapNode title="添加资讯" url="~/Admin_BMS/News_Insert.aspx" description="子节点"/>
+       
+        <siteMapNode title="资讯管理" url="~/Admin_BMS/News_Delete.aspx" description="子节点"/>
+      </siteMapNode>
+      
+       <siteMapNode title="资讯评论及回复管理"  description="父节点" >
+        <siteMapNode title="删除评论" url="~/Admin_BMS/NC_Delete.aspx" description="子节点"/>
+        <siteMapNode title="删除评论回复" url="~/Admin_BMS/NCB_Delete.aspx" description="子节点"/>
+      </siteMapNode>
+      
+      <siteMapNode title="首页活动管理"  description="父节点" >
+        <siteMapNode title="添加活动" url="~/Admin_BMS/Action_Insert.aspx" description="子节点"/>
+       
+        <siteMapNode title="活动管理" url="~/Admin_BMS/Action_Delete.aspx" description="子节点"/>
+      </siteMapNode>
+      
+      <siteMapNode title="论坛综合管理"  description="父节点" >
+         <siteMapNode title="帖子管理" url="~/Admin_BMS/BBS_Delete.aspx" description="子节点"/>
+         <siteMapNode title="删除帖子评论" url="~/Admin_BMS/BBS_Comment.aspx" description="子节点"/>
+        <siteMapNode title="删除评论回复" url="~/Admin_BMS/BBS_Comment_Back.aspx" description="子节点"/>
+      </siteMapNode>
+      
+      <siteMapNode title="美图壁纸管理"  description="父节点" >
+        <siteMapNode title="添加美图" url="~/Admin_BMS/Img_Insert.aspx" description="子节点"/>
+       
+        <siteMapNode title="美图壁纸管理" url="~/Admin_BMS/Img_Delete.aspx" description="子节点"/>
+      </siteMapNode>
+      
+      <siteMapNode title="直播间管理"  description="父节点" >
+        <siteMapNode title="添加直播间" url="~/Admin_BMS/Live_Insert.aspx" description="子节点"/>
+       
+        <siteMapNode title="直播间管理" url="~/Admin_BMS/Live_Delete.aspx" description="子节点"/>
+      </siteMapNode>
+
+      <siteMapNode title="用户管理"  description="父节点" >
+        <siteMapNode title="修改用户资料" url="~/Admin_BMS/User_Update.aspx" description="子节点"/>
+        <siteMapNode title="用户信息管理" url="~/Admin_BMS/User_Delete.aspx" description="子节点"/>
+        <siteMapNode title="查询用户信息" url="~/Admin_BMS/User_Select.aspx" description="子节点"/>
+      </siteMapNode>
+      
+      <siteMapNode title="卡牌管理"  description="父节点" >
+        <siteMapNode title="添加卡牌" url="~/Admin_BMS/Card_Insert.aspx" description="子节点"/>
+       
+        <siteMapNode title="卡牌信息管理" url="~/Admin_BMS/Card_Delete.aspx" description="子节点"/>
+        <siteMapNode title="卡组推荐管理" url="~/Admin_BMS/Card_group.aspx" description="子节点"/>
+      </siteMapNode>
+    </siteMapNode>
+</siteMap>

@@ -1,0 +1,1497 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="12.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProductVersion>
+    </ProductVersion>
+    <SchemaVersion>2.0</SchemaVersion>
+    <ProjectGuid>{14EA3AD0-1E97-41DF-A1F5-4AEC91E17908}</ProjectGuid>
+    <ProjectTypeGuids>{349c5851-65df-11da-9384-00065b846f21};{fae04ec0-301f-11d3-bf4b-00c04f79efbc}</ProjectTypeGuids>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>BFS_UI</RootNamespace>
+    <AssemblyName>BFS_UI</AssemblyName>
+    <TargetFrameworkVersion>v4.0</TargetFrameworkVersion>
+    <UseIISExpress>true</UseIISExpress>
+    <IISExpressSSLPort />
+    <IISExpressAnonymousAuthentication />
+    <IISExpressWindowsAuthentication />
+    <IISExpressUseClassicPipelineMode />
+    <UseGlobalApplicationHostFile />
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="AjaxControlToolkit, Version=17.1.1.0, Culture=neutral, PublicKeyToken=28f01b0e84b6d53e, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>D:\UserData\My Documents\ASP.NET AJAX Control Toolkit\Bin\AjaxControlToolkit.dll</HintPath>
+    </Reference>
+    <Reference Include="CKEditor.NET, Version=3.6.6.2, Culture=neutral, PublicKeyToken=e379cdf2f8354999, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\ckeditor的使用与配置\ckeditor_aspnet_3.6.6.2\bin\Release\CKEditor.NET.dll</HintPath>
+    </Reference>
+    <Reference Include="CKFinder">
+      <HintPath>..\..\ckeditor的使用与配置\ckfinder\bin\Release\CKFinder.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.ComponentModel.DataAnnotations" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="System.Web.DataVisualization" />
+    <Reference Include="System.Web.Extensions" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Web" />
+    <Reference Include="System.Xml" />
+    <Reference Include="System.Configuration" />
+    <Reference Include="System.Web.Services" />
+    <Reference Include="System.EnterpriseServices" />
+    <Reference Include="System.Web.DynamicData" />
+    <Reference Include="System.Web.Entity" />
+    <Reference Include="System.Web.ApplicationServices" />
+    <Reference Include="Microsoft.Web.Infrastructure, Version=1.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <Private>True</Private>
+      <HintPath>..\packages\Microsoft.Web.Infrastructure.1.0.0.0\lib\net40\Microsoft.Web.Infrastructure.dll</HintPath>
+    </Reference>
+    <Reference Include="AspNet.ScriptManager.jQuery">
+      <HintPath>..\packages\AspNet.ScriptManager.jQuery.1.8.2\lib\net40\AspNet.ScriptManager.jQuery.dll</HintPath>
+    </Reference>
+    <Reference Include="AspNet.ScriptManager.jQuery.UI.Combined">
+      <HintPath>..\packages\AspNet.ScriptManager.jQuery.UI.Combined.1.8.24\lib\net40\AspNet.ScriptManager.jQuery.UI.Combined.dll</HintPath>
+    </Reference>
+    <Reference Include="EntityFramework, Version=4.4.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL">
+      <HintPath>..\packages\EntityFramework.5.0.0\lib\net40\EntityFramework.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Web.Providers, Version=1.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35">
+      <HintPath>..\packages\Microsoft.AspNet.Providers.Core.1.2\lib\net40\System.Web.Providers.dll</HintPath>
+    </Reference>
+    <Reference Include="DotNetOpenAuth.Core, Version=4.0.0.0, Culture=neutral, PublicKeyToken=2780ccd10d57b246, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\packages\DotNetOpenAuth.Core.4.1.4.12333\lib\net40-full\DotNetOpenAuth.Core.dll</HintPath>
+    </Reference>
+    <Reference Include="DotNetOpenAuth.OAuth, Version=4.0.0.0, Culture=neutral, PublicKeyToken=2780ccd10d57b246, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\packages\DotNetOpenAuth.OAuth.Core.4.1.4.12333\lib\net40-full\DotNetOpenAuth.OAuth.dll</HintPath>
+    </Reference>
+    <Reference Include="DotNetOpenAuth.OAuth.Consumer, Version=4.0.0.0, Culture=neutral, PublicKeyToken=2780ccd10d57b246, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\packages\DotNetOpenAuth.OAuth.Consumer.4.1.4.12333\lib\net40-full\DotNetOpenAuth.OAuth.Consumer.dll</HintPath>
+    </Reference>
+    <Reference Include="DotNetOpenAuth.OpenId, Version=4.0.0.0, Culture=neutral, PublicKeyToken=2780ccd10d57b246, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\packages\DotNetOpenAuth.OpenId.Core.4.1.4.12333\lib\net40-full\DotNetOpenAuth.OpenId.dll</HintPath>
+    </Reference>
+    <Reference Include="DotNetOpenAuth.OpenId.RelyingParty, Version=4.0.0.0, Culture=neutral, PublicKeyToken=2780ccd10d57b246, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\packages\DotNetOpenAuth.OpenId.RelyingParty.4.1.4.12333\lib\net40-full\DotNetOpenAuth.OpenId.RelyingParty.dll</HintPath>
+    </Reference>
+    <Reference Include="DotNetOpenAuth.AspNet, Version=4.0.0.0, Culture=neutral, PublicKeyToken=2780ccd10d57b246, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\packages\DotNetOpenAuth.AspNet.4.1.4.12333\lib\net40-full\DotNetOpenAuth.AspNet.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.AspNet.Membership.OpenAuth, Version=1.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35">
+      <HintPath>..\packages\Microsoft.AspNet.Membership.OpenAuth.1.0.1\lib\net40\Microsoft.AspNet.Membership.OpenAuth.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.AspNet.FriendlyUrls, Version=1.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35">
+      <HintPath>..\packages\Microsoft.AspNet.FriendlyUrls.Core.1.0.0\lib\net40\Microsoft.AspNet.FriendlyUrls.dll</HintPath>
+    </Reference>
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="about.aspx" />
+    <Content Include="Admin_BMS\Action_Delete.aspx" />
+    <Content Include="Admin_BMS\Action_Insert.aspx" />
+    <Content Include="Admin_BMS\Action_Update.aspx" />
+    <Content Include="Admin_BMS\BBS_Comment.aspx" />
+    <Content Include="Admin_BMS\BBS_Delete.aspx" />
+    <Content Include="Admin_BMS\BBS_Comment_Back.aspx" />
+    <Content Include="Admin_BMS\Card_Delete.aspx" />
+    <Content Include="Admin_BMS\Card_Insert.aspx" />
+    <Content Include="Admin_BMS\Card_group.aspx" />
+    <Content Include="Admin_BMS\Card_Update.aspx" />
+    <Content Include="Admin_BMS\css\960.css" />
+    <Content Include="Admin_BMS\css\facebox.css" />
+    <Content Include="Admin_BMS\css\fancy-button\fancy-button.css" />
+    <Content Include="Admin_BMS\css\gallery.css" />
+    <Content Include="Admin_BMS\css\grid.css" />
+    <Content Include="Admin_BMS\css\grumble\grumble.min.css" />
+    <Content Include="Admin_BMS\css\ie.css" />
+    <Content Include="Admin_BMS\css\ie6.css" />
+    <Content Include="Admin_BMS\css\jquery.jqplot.min.css" />
+    <Content Include="Admin_BMS\css\layout.css" />
+    <Content Include="Admin_BMS\css\nav.css" />
+    <Content Include="Admin_BMS\css\prettyPhoto.css" />
+    <Content Include="Admin_BMS\css\reset.css" />
+    <Content Include="Admin_BMS\css\table\demo_page.css" />
+    <Content Include="Admin_BMS\css\table\demo_table.css" />
+    <Content Include="Admin_BMS\css\table\demo_table_jui.css" />
+    <Content Include="Admin_BMS\css\tabs.css" />
+    <Content Include="Admin_BMS\css\text.css" />
+    <Content Include="Admin_BMS\css\themes\base\images\ui-bg_flat_0_aaaaaa_40x100.png" />
+    <Content Include="Admin_BMS\css\themes\base\images\ui-bg_flat_75_ffffff_40x100.png" />
+    <Content Include="Admin_BMS\css\themes\base\images\ui-bg_glass_55_fbf9ee_1x400.png" />
+    <Content Include="Admin_BMS\css\themes\base\images\ui-bg_glass_65_ffffff_1x400.png" />
+    <Content Include="Admin_BMS\css\themes\base\images\ui-bg_glass_75_dadada_1x400.png" />
+    <Content Include="Admin_BMS\css\themes\base\images\ui-bg_glass_75_e6e6e6_1x400.png" />
+    <Content Include="Admin_BMS\css\themes\base\images\ui-bg_glass_95_fef1ec_1x400.png" />
+    <Content Include="Admin_BMS\css\themes\base\images\ui-bg_highlight-soft_75_cccccc_1x100.png" />
+    <Content Include="Admin_BMS\css\themes\base\images\ui-icons_222222_256x240.png" />
+    <Content Include="Admin_BMS\css\themes\base\images\ui-icons_2e83ff_256x240.png" />
+    <Content Include="Admin_BMS\css\themes\base\images\ui-icons_454545_256x240.png" />
+    <Content Include="Admin_BMS\css\themes\base\images\ui-icons_888888_256x240.png" />
+    <Content Include="Admin_BMS\css\themes\base\images\ui-icons_cd0a0a_256x240.png" />
+    <Content Include="Admin_BMS\css\themes\base\jquery.ui.accordion.css" />
+    <Content Include="Admin_BMS\css\themes\base\jquery.ui.all.css" />
+    <Content Include="Admin_BMS\css\themes\base\jquery.ui.autocomplete.css" />
+    <Content Include="Admin_BMS\css\themes\base\jquery.ui.base.css" />
+    <Content Include="Admin_BMS\css\themes\base\jquery.ui.button.css" />
+    <Content Include="Admin_BMS\css\themes\base\jquery.ui.core.css" />
+    <Content Include="Admin_BMS\css\themes\base\jquery.ui.datepicker.css" />
+    <Content Include="Admin_BMS\css\themes\base\jquery.ui.dialog.css" />
+    <Content Include="Admin_BMS\css\themes\base\jquery.ui.progressbar.css" />
+    <Content Include="Admin_BMS\css\themes\base\jquery.ui.resizable.css" />
+    <Content Include="Admin_BMS\css\themes\base\jquery.ui.selectable.css" />
+    <Content Include="Admin_BMS\css\themes\base\jquery.ui.slider.css" />
+    <Content Include="Admin_BMS\css\themes\base\jquery.ui.tabs.css" />
+    <Content Include="Admin_BMS\css\themes\base\jquery.ui.theme.css" />
+    <Content Include="Admin_BMS\css\themes\custom-theme\images\ui-bg_flat_0_aaaaaa_40x100.png" />
+    <Content Include="Admin_BMS\css\themes\custom-theme\images\ui-bg_glass_55_fbf9ee_1x400.png" />
+    <Content Include="Admin_BMS\css\themes\custom-theme\images\ui-bg_glass_65_ffffff_1x400.png" />
+    <Content Include="Admin_BMS\css\themes\custom-theme\images\ui-bg_glass_75_dadada_1x400.png" />
+    <Content Include="Admin_BMS\css\themes\custom-theme\images\ui-bg_glass_75_e6e6e6_1x400.png" />
+    <Content Include="Admin_BMS\css\themes\custom-theme\images\ui-bg_glass_75_ffffff_1x400.png" />
+    <Content Include="Admin_BMS\css\themes\custom-theme\images\ui-bg_highlight-soft_75_cccccc_1x100.png" />
+    <Content Include="Admin_BMS\css\themes\custom-theme\images\ui-bg_inset-soft_95_fef1ec_1x100.png" />
+    <Content Include="Admin_BMS\css\themes\custom-theme\images\ui-icons_222222_256x240.png" />
+    <Content Include="Admin_BMS\css\themes\custom-theme\images\ui-icons_2e83ff_256x240.png" />
+    <Content Include="Admin_BMS\css\themes\custom-theme\images\ui-icons_454545_256x240.png" />
+    <Content Include="Admin_BMS\css\themes\custom-theme\images\ui-icons_888888_256x240.png" />
+    <Content Include="Admin_BMS\css\themes\custom-theme\images\ui-icons_cd0a0a_256x240.png" />
+    <Content Include="Admin_BMS\css\themes\custom-theme\jquery-ui-1.8.16.custom.css" />
+    <Content Include="Admin_BMS\css\themes\custom-theme\jquery.ui.accordion.css" />
+    <Content Include="Admin_BMS\css\themes\custom-theme\jquery.ui.all.css" />
+    <Content Include="Admin_BMS\css\themes\custom-theme\jquery.ui.autocomplete.css" />
+    <Content Include="Admin_BMS\css\themes\custom-theme\jquery.ui.base.css" />
+    <Content Include="Admin_BMS\css\themes\custom-theme\jquery.ui.button.css" />
+    <Content Include="Admin_BMS\css\themes\custom-theme\jquery.ui.core.css" />
+    <Content Include="Admin_BMS\css\themes\custom-theme\jquery.ui.datepicker.css" />
+    <Content Include="Admin_BMS\css\themes\custom-theme\jquery.ui.dialog.css" />
+    <Content Include="Admin_BMS\css\themes\custom-theme\jquery.ui.progressbar.css" />
+    <Content Include="Admin_BMS\css\themes\custom-theme\jquery.ui.resizable.css" />
+    <Content Include="Admin_BMS\css\themes\custom-theme\jquery.ui.selectable.css" />
+    <Content Include="Admin_BMS\css\themes\custom-theme\jquery.ui.slider.css" />
+    <Content Include="Admin_BMS\css\themes\custom-theme\jquery.ui.tabs.css" />
+    <Content Include="Admin_BMS\css\themes\custom-theme\jquery.ui.theme.css" />
+    <Content Include="Admin_BMS\data\ajax-response.html" />
+    <Content Include="Admin_BMS\img\0.png" />
+    <Content Include="Admin_BMS\img\accordian_bg.png" />
+    <Content Include="Admin_BMS\img\ajax-loader.gif" />
+    <Content Include="Admin_BMS\img\application_double.png" />
+    <Content Include="Admin_BMS\img\arrow-asc.png" />
+    <Content Include="Admin_BMS\img\arrow-both.png" />
+    <Content Include="Admin_BMS\img\arrow-desc.png" />
+    <Content Include="Admin_BMS\img\arrow.png" />
+    <Content Include="Admin_BMS\img\bar.gif" />
+    <Content Include="Admin_BMS\img\bg-dark.png" />
+    <Content Include="Admin_BMS\img\bg-input-focus.png" />
+    <Content Include="Admin_BMS\img\bg-lite.png" />
+    <Content Include="Admin_BMS\img\bg.png" />
+    <Content Include="Admin_BMS\img\block-actions-bg.png" />
+    <Content Include="Admin_BMS\img\block-header-bg.png" />
+    <Content Include="Admin_BMS\img\border_bg.png" />
+    <Content Include="Admin_BMS\img\btn-icons.png" />
+    <Content Include="Admin_BMS\img\button-left.png" />
+    <Content Include="Admin_BMS\img\button-right.png" />
+    <Content Include="Admin_BMS\img\button.png" />
+    <Content Include="Admin_BMS\img\button_gradient_effect.png" />
+    <Content Include="Admin_BMS\img\button_highlight.png" />
+    <Content Include="Admin_BMS\img\button_highlight_selected.png" />
+    <Content Include="Admin_BMS\img\button_home.png" />
+    <Content Include="Admin_BMS\img\calendar.gif" />
+    <Content Include="Admin_BMS\img\chart.jpg" />
+    <Content Include="Admin_BMS\img\checkbox.png" />
+    <Content Include="Admin_BMS\img\check_list.png" />
+    <Content Include="Admin_BMS\img\chekbox_off.png" />
+    <Content Include="Admin_BMS\img\chekbox_on.png" />
+    <Content Include="Admin_BMS\img\cog.png" />
+    <Content Include="Admin_BMS\img\cross.png" />
+    <Content Include="Admin_BMS\img\dark-bg.png" />
+    <Content Include="Admin_BMS\img\down.png" />
+    <Content Include="Admin_BMS\img\fancy-button\chekbox_off.png" />
+    <Content Include="Admin_BMS\img\fancy-button\chekbox_on.png" />
+    <Content Include="Admin_BMS\img\fancy-button\radio_off.png" />
+    <Content Include="Admin_BMS\img\fancy-button\radio_on.png" />
+    <Content Include="Admin_BMS\img\file.png" />
+    <Content Include="Admin_BMS\img\gallery\image_01.jpg" />
+    <Content Include="Admin_BMS\img\gallery\image_02.jpg" />
+    <Content Include="Admin_BMS\img\gallery\image_03.jpg" />
+    <Content Include="Admin_BMS\img\gallery\image_04.jpg" />
+    <Content Include="Admin_BMS\img\gallery\image_05.jpg" />
+    <Content Include="Admin_BMS\img\gallery\image_06.jpg" />
+    <Content Include="Admin_BMS\img\gallery\image_08.jpg" />
+    <Content Include="Admin_BMS\img\gallery\image_09.jpg" />
+    <Content Include="Admin_BMS\img\gallery\image_10.jpg" />
+    <Content Include="Admin_BMS\img\gallery\image_11.jpg" />
+    <Content Include="Admin_BMS\img\gallery\image_12.jpg" />
+    <Content Include="Admin_BMS\img\gallery\image_13.jpg" />
+    <Content Include="Admin_BMS\img\gallery\image_14.jpg" />
+    <Content Include="Admin_BMS\img\gallery\image_15.jpg" />
+    <Content Include="Admin_BMS\img\gallery\image_16.jpg" />
+    <Content Include="Admin_BMS\img\gallery\image_17.jpg" />
+    <Content Include="Admin_BMS\img\gallery\image_18.jpg" />
+    <Content Include="Admin_BMS\img\gallery\image_19.jpg" />
+    <Content Include="Admin_BMS\img\gallery\image_20.jpg" />
+    <Content Include="Admin_BMS\img\gallery\image_21.jpg" />
+    <Content Include="Admin_BMS\img\gallery\image_23.jpg" />
+    <Content Include="Admin_BMS\img\gallery\image_24.jpg" />
+    <Content Include="Admin_BMS\img\gallery\image_25.jpg" />
+    <Content Include="Admin_BMS\img\gallery\image_26.jpg" />
+    <Content Include="Admin_BMS\img\gallery\image_27.jpg" />
+    <Content Include="Admin_BMS\img\gallery\image_29.jpg" />
+    <Content Include="Admin_BMS\img\gallery\image_30.jpg" />
+    <Content Include="Admin_BMS\img\gallery\thumbs\image_01.png" />
+    <Content Include="Admin_BMS\img\gallery\thumbs\image_02.png" />
+    <Content Include="Admin_BMS\img\gallery\thumbs\image_03.png" />
+    <Content Include="Admin_BMS\img\gallery\thumbs\image_04.png" />
+    <Content Include="Admin_BMS\img\gallery\thumbs\image_05.png" />
+    <Content Include="Admin_BMS\img\gallery\thumbs\image_06.png" />
+    <Content Include="Admin_BMS\img\gallery\thumbs\image_07.png" />
+    <Content Include="Admin_BMS\img\gallery\thumbs\image_08.png" />
+    <Content Include="Admin_BMS\img\gallery\thumbs\image_09.png" />
+    <Content Include="Admin_BMS\img\gallery\thumbs\image_20.png" />
+    <Content Include="Admin_BMS\img\gallery\thumbs\image_21.png" />
+    <Content Include="Admin_BMS\img\gallery\thumbs\image_23.png" />
+    <Content Include="Admin_BMS\img\gallery\thumbs\image_24.png" />
+    <Content Include="Admin_BMS\img\gallery\thumbs\image_25.png" />
+    <Content Include="Admin_BMS\img\gallery\thumbs\image_26.png" />
+    <Content Include="Admin_BMS\img\gallery\thumbs\image_27.png" />
+    <Content Include="Admin_BMS\img\gallery\thumbs\image_28.png" />
+    <Content Include="Admin_BMS\img\gallery\thumbs\image_29.png" />
+    <Content Include="Admin_BMS\img\gallery\thumbs\image_30.png" />
+    <Content Include="Admin_BMS\img\gallery\thumbs_small\image_01.png" />
+    <Content Include="Admin_BMS\img\gallery\thumbs_small\image_02.png" />
+    <Content Include="Admin_BMS\img\gallery\thumbs_small\image_03.png" />
+    <Content Include="Admin_BMS\img\gallery\thumbs_small\image_04.png" />
+    <Content Include="Admin_BMS\img\gallery\thumbs_small\image_05.png" />
+    <Content Include="Admin_BMS\img\gallery\thumbs_small\image_06.png" />
+    <Content Include="Admin_BMS\img\gallery\thumbs_small\image_07.png" />
+    <Content Include="Admin_BMS\img\gallery\thumbs_small\image_08.png" />
+    <Content Include="Admin_BMS\img\gallery\thumbs_small\image_09.png" />
+    <Content Include="Admin_BMS\img\gallery\thumbs_small\image_10.png" />
+    <Content Include="Admin_BMS\img\gallery\thumbs_small\image_11.png" />
+    <Content Include="Admin_BMS\img\gallery\thumbs_small\image_12.png" />
+    <Content Include="Admin_BMS\img\gallery\thumbs_small\image_13.png" />
+    <Content Include="Admin_BMS\img\gallery\thumbs_small\image_14.png" />
+    <Content Include="Admin_BMS\img\gallery\thumbs_small\image_15.png" />
+    <Content Include="Admin_BMS\img\gallery\thumbs_small\image_16.png" />
+    <Content Include="Admin_BMS\img\gallery\thumbs_small\image_17.png" />
+    <Content Include="Admin_BMS\img\gallery\thumbs_small\image_18.png" />
+    <Content Include="Admin_BMS\img\gallery\thumbs_small\image_19.png" />
+    <Content Include="Admin_BMS\img\gallery\thumbs_small\image_20.png" />
+    <Content Include="Admin_BMS\img\gallery\thumbs_small\image_21.png" />
+    <Content Include="Admin_BMS\img\gallery\thumbs_small\image_22.png" />
+    <Content Include="Admin_BMS\img\gallery\thumbs_small\image_23.png" />
+    <Content Include="Admin_BMS\img\gallery\thumbs_small\image_24.png" />
+    <Content Include="Admin_BMS\img\gallery\thumbs_small\image_25.png" />
+    <Content Include="Admin_BMS\img\gallery\thumbs_small\image_26.png" />
+    <Content Include="Admin_BMS\img\gallery\thumbs_small\image_27.png" />
+    <Content Include="Admin_BMS\img\gallery\thumbs_small\image_28.png" />
+    <Content Include="Admin_BMS\img\gallery\thumbs_small\image_29.png" />
+    <Content Include="Admin_BMS\img\gallery\thumbs_small\image_30.png" />
+    <Content Include="Admin_BMS\img\gradient_red.gif" />
+    <Content Include="Admin_BMS\img\header-repeat.jpg" />
+    <Content Include="Admin_BMS\img\header_inner.png" />
+    <Content Include="Admin_BMS\img\header_inner_corners.png" />
+    <Content Include="Admin_BMS\img\horizontal.jpg" />
+    <Content Include="Admin_BMS\img\house.png" />
+    <Content Include="Admin_BMS\img\icon-charts-graphs.png" />
+    <Content Include="Admin_BMS\img\icon-dashboard.png" />
+    <Content Include="Admin_BMS\img\icon-direction.png" />
+    <Content Include="Admin_BMS\img\icon-form-style.png" />
+    <Content Include="Admin_BMS\img\icon-gallery.png" />
+    <Content Include="Admin_BMS\img\icon-grid-tables.png" />
+    <Content Include="Admin_BMS\img\icon-notifications.png" />
+    <Content Include="Admin_BMS\img\img-profile.jpg" />
+    <Content Include="Admin_BMS\img\img_box_background_pattern.png" />
+    <Content Include="Admin_BMS\img\input-left.png" />
+    <Content Include="Admin_BMS\img\input-right.png" />
+    <Content Include="Admin_BMS\img\input.png" />
+    <Content Include="Admin_BMS\img\login_corners.png" />
+    <Content Include="Admin_BMS\img\logo.png" />
+    <Content Include="Admin_BMS\img\logout_bg.gif" />
+    <Content Include="Admin_BMS\img\menu_arrow.png" />
+    <Content Include="Admin_BMS\img\menu_border.png" />
+    <Content Include="Admin_BMS\img\menu_l_selected.png" />
+    <Content Include="Admin_BMS\img\menu_r_selected.png" />
+    <Content Include="Admin_BMS\img\menu_selected.png" />
+    <Content Include="Admin_BMS\img\minus.png" />
+    <Content Include="Admin_BMS\img\nav-repeat2.jpg" />
+    <Content Include="Admin_BMS\img\nav_bg.png" />
+    <Content Include="Admin_BMS\img\nav_divider.png" />
+    <Content Include="Admin_BMS\img\page_white_copy.png" />
+    <Content Include="Admin_BMS\img\photo_60x60.jpg" />
+    <Content Include="Admin_BMS\img\pluse.png" />
+    <Content Include="Admin_BMS\img\pretty-photo\fullscreen\high.gif" />
+    <Content Include="Admin_BMS\img\pretty-photo\fullscreen\huge.gif" />
+    <Content Include="Admin_BMS\img\pretty-photo\fullscreen\item1-full.jpg" />
+    <Content Include="Admin_BMS\img\pretty-photo\fullscreen\item10-full.png" />
+    <Content Include="Admin_BMS\img\pretty-photo\fullscreen\item11-full.png" />
+    <Content Include="Admin_BMS\img\pretty-photo\fullscreen\item12-full.png" />
+    <Content Include="Admin_BMS\img\pretty-photo\fullscreen\item13-full.png" />
+    <Content Include="Admin_BMS\img\pretty-photo\fullscreen\item2-full.jpg" />
+    <Content Include="Admin_BMS\img\pretty-photo\fullscreen\item3-full.png" />
+    <Content Include="Admin_BMS\img\pretty-photo\fullscreen\item4-full.png" />
+    <Content Include="Admin_BMS\img\pretty-photo\fullscreen\item5-full.png" />
+    <Content Include="Admin_BMS\img\pretty-photo\fullscreen\item6-full.png" />
+    <Content Include="Admin_BMS\img\pretty-photo\fullscreen\item7-full.png" />
+    <Content Include="Admin_BMS\img\pretty-photo\fullscreen\item8-full.png" />
+    <Content Include="Admin_BMS\img\pretty-photo\fullscreen\item9-full.png" />
+    <Content Include="Admin_BMS\img\pretty-photo\fullscreen\wide.gif" />
+    <Content Include="Admin_BMS\img\pretty-photo\prettyPhoto\dark_rounded\btnNext.png" />
+    <Content Include="Admin_BMS\img\pretty-photo\prettyPhoto\dark_rounded\btnPrevious.png" />
+    <Content Include="Admin_BMS\img\pretty-photo\prettyPhoto\dark_rounded\contentPattern.png" />
+    <Content Include="Admin_BMS\img\pretty-photo\prettyPhoto\dark_rounded\default_thumbnail.gif" />
+    <Content Include="Admin_BMS\img\pretty-photo\prettyPhoto\dark_rounded\loader.gif" />
+    <Content Include="Admin_BMS\img\pretty-photo\prettyPhoto\dark_rounded\sprite.png" />
+    <Content Include="Admin_BMS\img\pretty-photo\prettyPhoto\dark_square\btnNext.png" />
+    <Content Include="Admin_BMS\img\pretty-photo\prettyPhoto\dark_square\btnPrevious.png" />
+    <Content Include="Admin_BMS\img\pretty-photo\prettyPhoto\dark_square\contentPattern.png" />
+    <Content Include="Admin_BMS\img\pretty-photo\prettyPhoto\dark_square\default_thumbnail.gif" />
+    <Content Include="Admin_BMS\img\pretty-photo\prettyPhoto\dark_square\loader.gif" />
+    <Content Include="Admin_BMS\img\pretty-photo\prettyPhoto\dark_square\sprite.png" />
+    <Content Include="Admin_BMS\img\pretty-photo\prettyPhoto\default\default_thumb.png" />
+    <Content Include="Admin_BMS\img\pretty-photo\prettyPhoto\default\loader.gif" />
+    <Content Include="Admin_BMS\img\pretty-photo\prettyPhoto\default\sprite.png" />
+    <Content Include="Admin_BMS\img\pretty-photo\prettyPhoto\default\sprite_next.png" />
+    <Content Include="Admin_BMS\img\pretty-photo\prettyPhoto\default\sprite_prev.png" />
+    <Content Include="Admin_BMS\img\pretty-photo\prettyPhoto\default\sprite_x.png" />
+    <Content Include="Admin_BMS\img\pretty-photo\prettyPhoto\default\sprite_y.png" />
+    <Content Include="Admin_BMS\img\pretty-photo\prettyPhoto\facebook\btnNext.png" />
+    <Content Include="Admin_BMS\img\pretty-photo\prettyPhoto\facebook\btnPrevious.png" />
+    <Content Include="Admin_BMS\img\pretty-photo\prettyPhoto\facebook\contentPatternBottom.png" />
+    <Content Include="Admin_BMS\img\pretty-photo\prettyPhoto\facebook\contentPatternLeft.png" />
+    <Content Include="Admin_BMS\img\pretty-photo\prettyPhoto\facebook\contentPatternRight.png" />
+    <Content Include="Admin_BMS\img\pretty-photo\prettyPhoto\facebook\contentPatternTop.png" />
+    <Content Include="Admin_BMS\img\pretty-photo\prettyPhoto\facebook\default_thumbnail.gif" />
+    <Content Include="Admin_BMS\img\pretty-photo\prettyPhoto\facebook\loader.gif" />
+    <Content Include="Admin_BMS\img\pretty-photo\prettyPhoto\facebook\sprite.png" />
+    <Content Include="Admin_BMS\img\pretty-photo\prettyPhoto\light_rounded\btnNext.png" />
+    <Content Include="Admin_BMS\img\pretty-photo\prettyPhoto\light_rounded\btnPrevious.png" />
+    <Content Include="Admin_BMS\img\pretty-photo\prettyPhoto\light_rounded\default_thumbnail.gif" />
+    <Content Include="Admin_BMS\img\pretty-photo\prettyPhoto\light_rounded\loader.gif" />
+    <Content Include="Admin_BMS\img\pretty-photo\prettyPhoto\light_rounded\sprite.png" />
+    <Content Include="Admin_BMS\img\pretty-photo\prettyPhoto\light_square\btnNext.png" />
+    <Content Include="Admin_BMS\img\pretty-photo\prettyPhoto\light_square\btnPrevious.png" />
+    <Content Include="Admin_BMS\img\pretty-photo\prettyPhoto\light_square\default_thumbnail.gif" />
+    <Content Include="Admin_BMS\img\pretty-photo\prettyPhoto\light_square\loader.gif" />
+    <Content Include="Admin_BMS\img\pretty-photo\prettyPhoto\light_square\sprite.png" />
+    <Content Include="Admin_BMS\img\pretty-photo\thumbnails\flash-logo.png" />
+    <Content Include="Admin_BMS\img\pretty-photo\thumbnails\item1.jpg" />
+    <Content Include="Admin_BMS\img\pretty-photo\thumbnails\item10.jpg" />
+    <Content Include="Admin_BMS\img\pretty-photo\thumbnails\item11.jpg" />
+    <Content Include="Admin_BMS\img\pretty-photo\thumbnails\item12.jpg" />
+    <Content Include="Admin_BMS\img\pretty-photo\thumbnails\item13.jpg" />
+    <Content Include="Admin_BMS\img\pretty-photo\thumbnails\item2.jpg" />
+    <Content Include="Admin_BMS\img\pretty-photo\thumbnails\item3.jpg" />
+    <Content Include="Admin_BMS\img\pretty-photo\thumbnails\item4.jpg" />
+    <Content Include="Admin_BMS\img\pretty-photo\thumbnails\item5.jpg" />
+    <Content Include="Admin_BMS\img\pretty-photo\thumbnails\item6.jpg" />
+    <Content Include="Admin_BMS\img\pretty-photo\thumbnails\item7.jpg" />
+    <Content Include="Admin_BMS\img\pretty-photo\thumbnails\item8.jpg" />
+    <Content Include="Admin_BMS\img\pretty-photo\thumbnails\item9.jpg" />
+    <Content Include="Admin_BMS\img\pretty-photo\thumbnails\quicktime-logo.gif" />
+    <Content Include="Admin_BMS\img\quick_l.png" />
+    <Content Include="Admin_BMS\img\quick_l_selected.png" />
+    <Content Include="Admin_BMS\img\quick_r.png" />
+    <Content Include="Admin_BMS\img\radio.png" />
+    <Content Include="Admin_BMS\img\right.gif" />
+    <Content Include="Admin_BMS\img\select-left.png" />
+    <Content Include="Admin_BMS\img\select-right.png" />
+    <Content Include="Admin_BMS\img\shine-effect.png" />
+    <Content Include="Admin_BMS\img\sidemenu-repeat-hover.jpg" />
+    <Content Include="Admin_BMS\img\sidemenu-repeat.jpg" />
+    <Content Include="Admin_BMS\img\star_list.png" />
+    <Content Include="Admin_BMS\img\switch_minus.gif" />
+    <Content Include="Admin_BMS\img\switch_plus.gif" />
+    <Content Include="Admin_BMS\img\table\back_disabled.png" />
+    <Content Include="Admin_BMS\img\table\back_enabled.png" />
+    <Content Include="Admin_BMS\img\table\favicon.ico" />
+    <Content Include="Admin_BMS\img\table\forward_disabled.png" />
+    <Content Include="Admin_BMS\img\table\forward_enabled.png" />
+    <Content Include="Admin_BMS\img\table\sort_asc.png" />
+    <Content Include="Admin_BMS\img\table\sort_asc_disabled.png" />
+    <Content Include="Admin_BMS\img\table\sort_both.png" />
+    <Content Include="Admin_BMS\img\table\sort_desc.png" />
+    <Content Include="Admin_BMS\img\table\sort_desc_disabled.png" />
+    <Content Include="Admin_BMS\img\textarea-bl.png" />
+    <Content Include="Admin_BMS\img\textarea-br.png" />
+    <Content Include="Admin_BMS\img\textarea-l-off.png" />
+    <Content Include="Admin_BMS\img\textarea-l-over.png" />
+    <Content Include="Admin_BMS\img\textarea-r-off.png" />
+    <Content Include="Admin_BMS\img\textarea-r-over.png" />
+    <Content Include="Admin_BMS\img\textarea-tl.png" />
+    <Content Include="Admin_BMS\img\textarea-tr.png" />
+    <Content Include="Admin_BMS\img\vertical.jpg" />
+    <Content Include="Admin_BMS\Img_Admin\炉石logo.png" />
+    <Content Include="Admin_BMS\Img_Admin\炉石传说.png" />
+    <Content Include="Admin_BMS\Img_Admin\炉石传说_标识.png" />
+    <Content Include="Admin_BMS\Img_Delete.aspx" />
+    <Content Include="Admin_BMS\Img_Insert.aspx" />
+    <Content Include="Admin_BMS\Img_Update.aspx" />
+    <Content Include="Admin_BMS\js\fancy-button\fancy-button.js" />
+    <Content Include="Admin_BMS\js\jqPlot\excanvas.min.js" />
+    <Content Include="Admin_BMS\js\jqPlot\jquery.jqplot.min.js" />
+    <Content Include="Admin_BMS\js\jqPlot\plugins\jqplot.barRenderer.min.js" />
+    <Content Include="Admin_BMS\js\jqPlot\plugins\jqplot.BezierCurveRenderer.min.js" />
+    <Content Include="Admin_BMS\js\jqPlot\plugins\jqplot.blockRenderer.min.js" />
+    <Content Include="Admin_BMS\js\jqPlot\plugins\jqplot.bubbleRenderer.min.js" />
+    <Content Include="Admin_BMS\js\jqPlot\plugins\jqplot.canvasAxisLabelRenderer.min.js" />
+    <Content Include="Admin_BMS\js\jqPlot\plugins\jqplot.canvasAxisTickRenderer.min.js" />
+    <Content Include="Admin_BMS\js\jqPlot\plugins\jqplot.canvasOverlay.min.js" />
+    <Content Include="Admin_BMS\js\jqPlot\plugins\jqplot.canvasTextRenderer.min.js" />
+    <Content Include="Admin_BMS\js\jqPlot\plugins\jqplot.categoryAxisRenderer.min.js" />
+    <Content Include="Admin_BMS\js\jqPlot\plugins\jqplot.ciParser.min.js" />
+    <Content Include="Admin_BMS\js\jqPlot\plugins\jqplot.cursor.min.js" />
+    <Content Include="Admin_BMS\js\jqPlot\plugins\jqplot.dateAxisRenderer.min.js" />
+    <Content Include="Admin_BMS\js\jqPlot\plugins\jqplot.donutRenderer.min.js" />
+    <Content Include="Admin_BMS\js\jqPlot\plugins\jqplot.dragable.min.js" />
+    <Content Include="Admin_BMS\js\jqPlot\plugins\jqplot.enhancedLegendRenderer.min.js" />
+    <Content Include="Admin_BMS\js\jqPlot\plugins\jqplot.funnelRenderer.min.js" />
+    <Content Include="Admin_BMS\js\jqPlot\plugins\jqplot.highlighter.min.js" />
+    <Content Include="Admin_BMS\js\jqPlot\plugins\jqplot.json2.min.js" />
+    <Content Include="Admin_BMS\js\jqPlot\plugins\jqplot.logAxisRenderer.min.js" />
+    <Content Include="Admin_BMS\js\jqPlot\plugins\jqplot.mekkoAxisRenderer.min.js" />
+    <Content Include="Admin_BMS\js\jqPlot\plugins\jqplot.mekkoRenderer.min.js" />
+    <Content Include="Admin_BMS\js\jqPlot\plugins\jqplot.meterGaugeRenderer.min.js" />
+    <Content Include="Admin_BMS\js\jqPlot\plugins\jqplot.ohlcRenderer.min.js" />
+    <Content Include="Admin_BMS\js\jqPlot\plugins\jqplot.pieRenderer.min.js" />
+    <Content Include="Admin_BMS\js\jqPlot\plugins\jqplot.pointLabels.min.js" />
+    <Content Include="Admin_BMS\js\jqPlot\plugins\jqplot.trendline.min.js" />
+    <Content Include="Admin_BMS\js\jquery-1.6.4.min.js" />
+    <Content Include="Admin_BMS\js\jquery-ui\external\jquery.bgiframe-2.1.2.js" />
+    <Content Include="Admin_BMS\js\jquery-ui\external\jquery.cookie.js" />
+    <Content Include="Admin_BMS\js\jquery-ui\external\jquery.metadata.js" />
+    <Content Include="Admin_BMS\js\jquery-ui\external\qunit.css" />
+    <Content Include="Admin_BMS\js\jquery-ui\external\qunit.js" />
+    <Content Include="Admin_BMS\js\jquery-ui\jquery.effects.blind.min.js" />
+    <Content Include="Admin_BMS\js\jquery-ui\jquery.effects.bounce.min.js" />
+    <Content Include="Admin_BMS\js\jquery-ui\jquery.effects.clip.min.js" />
+    <Content Include="Admin_BMS\js\jquery-ui\jquery.effects.core.min.js" />
+    <Content Include="Admin_BMS\js\jquery-ui\jquery.effects.drop.min.js" />
+    <Content Include="Admin_BMS\js\jquery-ui\jquery.effects.explode.min.js" />
+    <Content Include="Admin_BMS\js\jquery-ui\jquery.effects.fade.min.js" />
+    <Content Include="Admin_BMS\js\jquery-ui\jquery.effects.fold.min.js" />
+    <Content Include="Admin_BMS\js\jquery-ui\jquery.effects.highlight.min.js" />
+    <Content Include="Admin_BMS\js\jquery-ui\jquery.effects.pulsate.min.js" />
+    <Content Include="Admin_BMS\js\jquery-ui\jquery.effects.scale.min.js" />
+    <Content Include="Admin_BMS\js\jquery-ui\jquery.effects.shake.min.js" />
+    <Content Include="Admin_BMS\js\jquery-ui\jquery.effects.slide.min.js" />
+    <Content Include="Admin_BMS\js\jquery-ui\jquery.effects.transfer.min.js" />
+    <Content Include="Admin_BMS\js\jquery-ui\jquery.ui.accordion.min.js" />
+    <Content Include="Admin_BMS\js\jquery-ui\jquery.ui.autocomplete.min.js" />
+    <Content Include="Admin_BMS\js\jquery-ui\jquery.ui.button.min.js" />
+    <Content Include="Admin_BMS\js\jquery-ui\jquery.ui.core.min.js" />
+    <Content Include="Admin_BMS\js\jquery-ui\jquery.ui.datepicker.min.js" />
+    <Content Include="Admin_BMS\js\jquery-ui\jquery.ui.dialog.min.js" />
+    <Content Include="Admin_BMS\js\jquery-ui\jquery.ui.draggable.min.js" />
+    <Content Include="Admin_BMS\js\jquery-ui\jquery.ui.droppable.min.js" />
+    <Content Include="Admin_BMS\js\jquery-ui\jquery.ui.mouse.min.js" />
+    <Content Include="Admin_BMS\js\jquery-ui\jquery.ui.position.min.js" />
+    <Content Include="Admin_BMS\js\jquery-ui\jquery.ui.progressbar.min.js" />
+    <Content Include="Admin_BMS\js\jquery-ui\jquery.ui.resizable.min.js" />
+    <Content Include="Admin_BMS\js\jquery-ui\jquery.ui.selectable.min.js" />
+    <Content Include="Admin_BMS\js\jquery-ui\jquery.ui.slider.min.js" />
+    <Content Include="Admin_BMS\js\jquery-ui\jquery.ui.sortable.min.js" />
+    <Content Include="Admin_BMS\js\jquery-ui\jquery.ui.tabs.min.js" />
+    <Content Include="Admin_BMS\js\jquery-ui\jquery.ui.widget.min.js" />
+    <Content Include="Admin_BMS\js\popup\jquery.facebox.js" />
+    <Content Include="Admin_BMS\js\pretty-photo\jquery.prettyPhoto.js" />
+    <Content Include="Admin_BMS\js\quick-sand\jquery.quicksand.js" />
+    <Content Include="Admin_BMS\js\setup.js" />
+    <Content Include="Admin_BMS\js\table\jquery.dataTables.min.js" />
+    <Content Include="Admin_BMS\js\tiny-mce\jquery.tinymce.js" />
+    <Content Include="Admin_BMS\js\tiny-mce\langs\en.js" />
+    <Content Include="Admin_BMS\js\tiny-mce\license.txt" />
+    <Content Include="Admin_BMS\js\tiny-mce\plugins\advhr\css\advhr.css" />
+    <Content Include="Admin_BMS\js\tiny-mce\plugins\advhr\editor_plugin.js" />
+    <Content Include="Admin_BMS\js\tiny-mce\plugins\advhr\editor_plugin_src.js" />
+    <Content Include="Admin_BMS\js\tiny-mce\plugins\advhr\js\rule.js" />
+    <Content Include="Admin_BMS\js\tiny-mce\plugins\advhr\langs\en_dlg.js" />
+    <Content Include="Admin_BMS\js\tiny-mce\plugins\advhr\rule.htm" />
+    <Content Include="Admin_BMS\js\tiny-mce\plugins\advimage\css\advimage.css" />
+    <Content Include="Admin_BMS\js\tiny-mce\plugins\advimage\editor_plugin.js" />
+    <Content Include="Admin_BMS\js\tiny-mce\plugins\advimage\editor_plugin_src.js" />
+    <Content Include="Admin_BMS\js\tiny-mce\plugins\advimage\image.htm" />
+    <Content Include="Admin_BMS\js\tiny-mce\plugins\advimage\img\sample.gif" />
+    <Content Include="Admin_BMS\js\tiny-mce\plugins\advimage\js\image.js" />
+    <Content Include="Admin_BMS\js\tiny-mce\plugins\advimage\langs\en_dlg.js" />
+    <Content Include="Admin_BMS\js\tiny-mce\plugins\advlink\css\advlink.css" />
+    <Content Include="Admin_BMS\js\tiny-mce\plugins\advlink\editor_plugin.js" />
+    <Content Include="Admin_BMS\js\tiny-mce\plugins\advlink\editor_plugin_src.js" />
+    <Content Include="Admin_BMS\js\tiny-mce\plugins\advlink\js\advlink.js" />
+    <Content Include="Admin_BMS\js\tiny-mce\plugins\advlink\langs\en_dlg.js" />
+    <Content Include="Admin_BMS\js\tiny-mce\plugins\advlink\link.htm" />
+    <Content Include="Admin_BMS\js\tiny-mce\plugins\advlist\editor_plugin.js" />
+    <Content Include="Admin_BMS\js\tiny-mce\plugins\advlist\editor_plugin_src.js" />
+    <Content Include="Admin_BMS\js\tiny-mce\plugins\autolink\editor_plugin.js" />
+    <Content Include="Admin_BMS\js\tiny-mce\plugins\autolink\editor_plugin_src.js" />
+    <Content Include="Admin_BMS\js\tiny-mce\plugins\autoresize\editor_plugin.js" />
+    <Content Include="Admin_BMS\js\tiny-mce\plugins\autoresize\editor_plugin_src.js" />
+    <Content Include="Admin_BMS\js\tiny-mce\plugins\autosave\editor_plugin.js" />
+    <Content Include="Admin_BMS\js\tiny-mce\plugins\autosave\editor_plugin_src.js" />
+    <Content Include="Admin_BMS\js\tiny-mce\plugins\autosave\langs\en.js" />
+    <Content Include="Admin_BMS\js\tiny-mce\plugins\bbcode\editor_plugin.js" />
+    <Content Include="Admin_BMS\js\tiny-mce\plugins\bbcode\editor_plugin_src.js" />
+    <Content Include="Admin_BMS\js\tiny-mce\plugins\contextmenu\editor_plugin.js" />
+    <Content Include="Admin_BMS\js\tiny-mce\plugins\contextmenu\editor_plugin_src.js" />
+    <Content Include="Admin_BMS\js\tiny-mce\plugins\directionality\editor_plugin.js" />
+    <Content Include="Admin_BMS\js\tiny-mce\plugins\directionality\editor_plugin_src.js" />
+    <Content Include="Admin_BMS\js\tiny-mce\plugins\emotions\editor_plugin.js" />
+    <Content Include="Admin_BMS\js\tiny-mce\plugins\emotions\editor_plugin_src.js" />
+    <Content Include="Admin_BMS\js\tiny-mce\plugins\emotions\emotions.htm" />
+    <Content Include="Admin_BMS\js\tiny-mce\plugins\emotions\img\smiley-cool.gif" />
+    <Content Include="Admin_BMS\js\tiny-mce\plugins\emotions\img\smiley-cry.gif" />
+    <Content Include="Admin_BMS\js\tiny-mce\plugins\emotions\img\smiley-embarassed.gif" />
+    <Content Include="Admin_BMS\js\tiny-mce\plugins\emotions\img\smiley-foot-in-mouth.gif" />
+    <Content Include="Admin_BMS\js\tiny-mce\plugins\emotions\img\smiley-frown.gif" />
+    <Content Include="Admin_BMS\js\tiny-mce\plugins\emotions\img\smiley-innocent.gif" />
+    <Content Include="Admin_BMS\js\tiny-mce\plugins\emotions\img\smiley-kiss.gif" />
+    <Content Include="Admin_BMS\js\tiny-mce\plugins\emotions\img\smiley-laughing.gif" />
+    <Content Include="Admin_BMS\js\tiny-mce\plugins\emotions\img\smiley-money-mouth.gif" />
+    <Content Include="Admin_BMS\js\tiny-mce\plugins\emotions\img\smiley-sealed.gif" />
+    <Content Include="Admin_BMS\js\tiny-mce\plugins\emotions\img\smiley-smile.gif" />
+    <Content Include="Admin_BMS\js\tiny-mce\plugins\emotions\img\smiley-surprised.gif" />
+    <Content Include="Admin_BMS\js\tiny-mce\plugins\emotions\img\smiley-tongue-out.gif" />
+    <Content Include="Admin_BMS\js\tiny-mce\plugins\emotions\img\smiley-undecided.gif" />
+    <Content Include="Admin_BMS\js\tiny-mce\plugins\emotions\img\smiley-wink.gif" />
+    <Content Include="Admin_BMS\js\tiny-mce\plugins\emotions\img\smiley-yell.gif" />
+    <Content Include="Admin_BMS\js\tiny-mce\plugins\emotions\js\emotions.js" />
+    <Content Include="Admin_BMS\js\tiny-mce\plugins\emotions\langs\en_dlg.js" />
+    <Content Include="Admin_BMS\js\tiny-mce\plugins\example\dialog.htm" />
+    <Content Include="Admin_BMS\js\tiny-mce\plugins\example\editor_plugin.js" />
+    <Content Include="Admin_BMS\js\tiny-mce\plugins\example\editor_plugin_src.js" />
+    <Content Include="Admin_BMS\js\tiny-mce\plugins\example\img\example.gif" />
+    <Content Include="Admin_BMS\js\tiny-mce\plugins\example\js\dialog.js" />
+    <Content Include="Admin_BMS\js\tiny-mce\plugins\example\langs\en.js" />
+    <Content Include="Admin_BMS\js\tiny-mce\plugins\example\langs\en_dlg.js" />
+    <Content Include="Admin_BMS\js\tiny-mce\plugins\example_dependency\editor_plugin.js" />
+    <Content Include="Admin_BMS\js\tiny-mce\plugins\example_dependency\editor_plugin_src.js" />
+    <Content Include="Admin_BMS\js\tiny-mce\plugins\fullpage\css\fullpage.css" />
+    <Content Include="Admin_BMS\js\tiny-mce\plugins\fullpage\editor_plugin.js" />
+    <Content Include="Admin_BMS\js\tiny-mce\plugins\fullpage\editor_plugin_src.js" />
+    <Content Include="Admin_BMS\js\tiny-mce\plugins\fullpage\fullpage.htm" />
+    <Content Include="Admin_BMS\js\tiny-mce\plugins\fullpage\js\fullpage.js" />
+    <Content Include="Admin_BMS\js\tiny-mce\plugins\fullpage\langs\en_dlg.js" />
+    <Content Include="Admin_BMS\js\tiny-mce\plugins\fullscreen\editor_plugin.js" />
+    <Content Include="Admin_BMS\js\tiny-mce\plugins\fullscreen\editor_plugin_src.js" />
+    <Content Include="Admin_BMS\js\tiny-mce\plugins\fullscreen\fullscreen.htm" />
+    <Content Include="Admin_BMS\js\tiny-mce\plugins\iespell\editor_plugin.js" />
+    <Content Include="Admin_BMS\js\tiny-mce\plugins\iespell\editor_plugin_src.js" />
+    <Content Include="Admin_BMS\js\tiny-mce\plugins\inlinepopups\editor_plugin.js" />
+    <Content Include="Admin_BMS\js\tiny-mce\plugins\inlinepopups\editor_plugin_src.js" />
+    <Content Include="Admin_BMS\js\tiny-mce\plugins\inlinepopups\skins\clearlooks2\img\alert.gif" />
+    <Content Include="Admin_BMS\js\tiny-mce\plugins\inlinepopups\skins\clearlooks2\img\button.gif" />
+    <Content Include="Admin_BMS\js\tiny-mce\plugins\inlinepopups\skins\clearlooks2\img\buttons.gif" />
+    <Content Include="Admin_BMS\js\tiny-mce\plugins\inlinepopups\skins\clearlooks2\img\confirm.gif" />
+    <Content Include="Admin_BMS\js\tiny-mce\plugins\inlinepopups\skins\clearlooks2\img\corners.gif" />
+    <Content Include="Admin_BMS\js\tiny-mce\plugins\inlinepopups\skins\clearlooks2\img\horizontal.gif" />
+    <Content Include="Admin_BMS\js\tiny-mce\plugins\inlinepopups\skins\clearlooks2\img\vertical.gif" />
+    <Content Include="Admin_BMS\js\tiny-mce\plugins\inlinepopups\skins\clearlooks2\window.css" />
+    <Content Include="Admin_BMS\js\tiny-mce\plugins\inlinepopups\template.htm" />
+    <Content Include="Admin_BMS\js\tiny-mce\plugins\insertdatetime\editor_plugin.js" />
+    <Content Include="Admin_BMS\js\tiny-mce\plugins\insertdatetime\editor_plugin_src.js" />
+    <Content Include="Admin_BMS\js\tiny-mce\plugins\layer\editor_plugin.js" />
+    <Content Include="Admin_BMS\js\tiny-mce\plugins\layer\editor_plugin_src.js" />
+    <Content Include="Admin_BMS\js\tiny-mce\plugins\legacyoutput\editor_plugin.js" />
+    <Content Include="Admin_BMS\js\tiny-mce\plugins\legacyoutput\editor_plugin_src.js" />
+    <Content Include="Admin_BMS\js\tiny-mce\plugins\lists\editor_plugin.js" />
+    <Content Include="Admin_BMS\js\tiny-mce\plugins\lists\editor_plugin_src.js" />
+    <Content Include="Admin_BMS\js\tiny-mce\plugins\media\css\media.css" />
+    <Content Include="Admin_BMS\js\tiny-mce\plugins\media\editor_plugin.js" />
+    <Content Include="Admin_BMS\js\tiny-mce\plugins\media\editor_plugin_src.js" />
+    <Content Include="Admin_BMS\js\tiny-mce\plugins\media\js\embed.js" />
+    <Content Include="Admin_BMS\js\tiny-mce\plugins\media\js\media.js" />
+    <Content Include="Admin_BMS\js\tiny-mce\plugins\media\langs\en_dlg.js" />
+    <Content Include="Admin_BMS\js\tiny-mce\plugins\media\media.htm" />
+    <Content Include="Admin_BMS\js\tiny-mce\plugins\media\moxieplayer.swf" />
+    <Content Include="Admin_BMS\js\tiny-mce\plugins\nonbreaking\editor_plugin.js" />
+    <Content Include="Admin_BMS\js\tiny-mce\plugins\nonbreaking\editor_plugin_src.js" />
+    <Content Include="Admin_BMS\js\tiny-mce\plugins\noneditable\editor_plugin.js" />
+    <Content Include="Admin_BMS\js\tiny-mce\plugins\noneditable\editor_plugin_src.js" />
+    <Content Include="Admin_BMS\js\tiny-mce\plugins\pagebreak\editor_plugin.js" />
+    <Content Include="Admin_BMS\js\tiny-mce\plugins\pagebreak\editor_plugin_src.js" />
+    <Content Include="Admin_BMS\js\tiny-mce\plugins\paste\editor_plugin.js" />
+    <Content Include="Admin_BMS\js\tiny-mce\plugins\paste\editor_plugin_src.js" />
+    <Content Include="Admin_BMS\js\tiny-mce\plugins\paste\js\pastetext.js" />
+    <Content Include="Admin_BMS\js\tiny-mce\plugins\paste\js\pasteword.js" />
+    <Content Include="Admin_BMS\js\tiny-mce\plugins\paste\langs\en_dlg.js" />
+    <Content Include="Admin_BMS\js\tiny-mce\plugins\paste\pastetext.htm" />
+    <Content Include="Admin_BMS\js\tiny-mce\plugins\paste\pasteword.htm" />
+    <Content Include="Admin_BMS\js\tiny-mce\plugins\preview\editor_plugin.js" />
+    <Content Include="Admin_BMS\js\tiny-mce\plugins\preview\editor_plugin_src.js" />
+    <Content Include="Admin_BMS\js\tiny-mce\plugins\preview\example.html" />
+    <Content Include="Admin_BMS\js\tiny-mce\plugins\preview\jscripts\embed.js" />
+    <Content Include="Admin_BMS\js\tiny-mce\plugins\preview\preview.html" />
+    <Content Include="Admin_BMS\js\tiny-mce\plugins\print\editor_plugin.js" />
+    <Content Include="Admin_BMS\js\tiny-mce\plugins\print\editor_plugin_src.js" />
+    <Content Include="Admin_BMS\js\tiny-mce\plugins\save\editor_plugin.js" />
+    <Content Include="Admin_BMS\js\tiny-mce\plugins\save\editor_plugin_src.js" />
+    <Content Include="Admin_BMS\js\tiny-mce\plugins\searchreplace\css\searchreplace.css" />
+    <Content Include="Admin_BMS\js\tiny-mce\plugins\searchreplace\editor_plugin.js" />
+    <Content Include="Admin_BMS\js\tiny-mce\plugins\searchreplace\editor_plugin_src.js" />
+    <Content Include="Admin_BMS\js\tiny-mce\plugins\searchreplace\js\searchreplace.js" />
+    <Content Include="Admin_BMS\js\tiny-mce\plugins\searchreplace\langs\en_dlg.js" />
+    <Content Include="Admin_BMS\js\tiny-mce\plugins\searchreplace\searchreplace.htm" />
+    <Content Include="Admin_BMS\js\tiny-mce\plugins\spellchecker\css\content.css" />
+    <Content Include="Admin_BMS\js\tiny-mce\plugins\spellchecker\editor_plugin.js" />
+    <Content Include="Admin_BMS\js\tiny-mce\plugins\spellchecker\editor_plugin_src.js" />
+    <Content Include="Admin_BMS\js\tiny-mce\plugins\spellchecker\img\wline.gif" />
+    <Content Include="Admin_BMS\js\tiny-mce\plugins\style\css\props.css" />
+    <Content Include="Admin_BMS\js\tiny-mce\plugins\style\editor_plugin.js" />
+    <Content Include="Admin_BMS\js\tiny-mce\plugins\style\editor_plugin_src.js" />
+    <Content Include="Admin_BMS\js\tiny-mce\plugins\style\js\props.js" />
+    <Content Include="Admin_BMS\js\tiny-mce\plugins\style\langs\en_dlg.js" />
+    <Content Include="Admin_BMS\js\tiny-mce\plugins\style\props.htm" />
+    <Content Include="Admin_BMS\js\tiny-mce\plugins\tabfocus\editor_plugin.js" />
+    <Content Include="Admin_BMS\js\tiny-mce\plugins\tabfocus\editor_plugin_src.js" />
+    <Content Include="Admin_BMS\js\tiny-mce\plugins\table\cell.htm" />
+    <Content Include="Admin_BMS\js\tiny-mce\plugins\table\css\cell.css" />
+    <Content Include="Admin_BMS\js\tiny-mce\plugins\table\css\row.css" />
+    <Content Include="Admin_BMS\js\tiny-mce\plugins\table\css\table.css" />
+    <Content Include="Admin_BMS\js\tiny-mce\plugins\table\editor_plugin.js" />
+    <Content Include="Admin_BMS\js\tiny-mce\plugins\table\editor_plugin_src.js" />
+    <Content Include="Admin_BMS\js\tiny-mce\plugins\table\js\cell.js" />
+    <Content Include="Admin_BMS\js\tiny-mce\plugins\table\js\merge_cells.js" />
+    <Content Include="Admin_BMS\js\tiny-mce\plugins\table\js\row.js" />
+    <Content Include="Admin_BMS\js\tiny-mce\plugins\table\js\table.js" />
+    <Content Include="Admin_BMS\js\tiny-mce\plugins\table\langs\en_dlg.js" />
+    <Content Include="Admin_BMS\js\tiny-mce\plugins\table\merge_cells.htm" />
+    <Content Include="Admin_BMS\js\tiny-mce\plugins\table\row.htm" />
+    <Content Include="Admin_BMS\js\tiny-mce\plugins\table\table.htm" />
+    <Content Include="Admin_BMS\js\tiny-mce\plugins\template\blank.htm" />
+    <Content Include="Admin_BMS\js\tiny-mce\plugins\template\css\template.css" />
+    <Content Include="Admin_BMS\js\tiny-mce\plugins\template\editor_plugin.js" />
+    <Content Include="Admin_BMS\js\tiny-mce\plugins\template\editor_plugin_src.js" />
+    <Content Include="Admin_BMS\js\tiny-mce\plugins\template\js\template.js" />
+    <Content Include="Admin_BMS\js\tiny-mce\plugins\template\langs\en_dlg.js" />
+    <Content Include="Admin_BMS\js\tiny-mce\plugins\template\template.htm" />
+    <Content Include="Admin_BMS\js\tiny-mce\plugins\visualchars\editor_plugin.js" />
+    <Content Include="Admin_BMS\js\tiny-mce\plugins\visualchars\editor_plugin_src.js" />
+    <Content Include="Admin_BMS\js\tiny-mce\plugins\wordcount\editor_plugin.js" />
+    <Content Include="Admin_BMS\js\tiny-mce\plugins\wordcount\editor_plugin_src.js" />
+    <Content Include="Admin_BMS\js\tiny-mce\plugins\xhtmlxtras\abbr.htm" />
+    <Content Include="Admin_BMS\js\tiny-mce\plugins\xhtmlxtras\acronym.htm" />
+    <Content Include="Admin_BMS\js\tiny-mce\plugins\xhtmlxtras\attributes.htm" />
+    <Content Include="Admin_BMS\js\tiny-mce\plugins\xhtmlxtras\cite.htm" />
+    <Content Include="Admin_BMS\js\tiny-mce\plugins\xhtmlxtras\css\attributes.css" />
+    <Content Include="Admin_BMS\js\tiny-mce\plugins\xhtmlxtras\css\popup.css" />
+    <Content Include="Admin_BMS\js\tiny-mce\plugins\xhtmlxtras\del.htm" />
+    <Content Include="Admin_BMS\js\tiny-mce\plugins\xhtmlxtras\editor_plugin.js" />
+    <Content Include="Admin_BMS\js\tiny-mce\plugins\xhtmlxtras\editor_plugin_src.js" />
+    <Content Include="Admin_BMS\js\tiny-mce\plugins\xhtmlxtras\ins.htm" />
+    <Content Include="Admin_BMS\js\tiny-mce\plugins\xhtmlxtras\js\abbr.js" />
+    <Content Include="Admin_BMS\js\tiny-mce\plugins\xhtmlxtras\js\acronym.js" />
+    <Content Include="Admin_BMS\js\tiny-mce\plugins\xhtmlxtras\js\attributes.js" />
+    <Content Include="Admin_BMS\js\tiny-mce\plugins\xhtmlxtras\js\cite.js" />
+    <Content Include="Admin_BMS\js\tiny-mce\plugins\xhtmlxtras\js\del.js" />
+    <Content Include="Admin_BMS\js\tiny-mce\plugins\xhtmlxtras\js\element_common.js" />
+    <Content Include="Admin_BMS\js\tiny-mce\plugins\xhtmlxtras\js\ins.js" />
+    <Content Include="Admin_BMS\js\tiny-mce\plugins\xhtmlxtras\langs\en_dlg.js" />
+    <Content Include="Admin_BMS\js\tiny-mce\themes\advanced\about.htm" />
+    <Content Include="Admin_BMS\js\tiny-mce\themes\advanced\anchor.htm" />
+    <Content Include="Admin_BMS\js\tiny-mce\themes\advanced\charmap.htm" />
+    <Content Include="Admin_BMS\js\tiny-mce\themes\advanced\color_picker.htm" />
+    <Content Include="Admin_BMS\js\tiny-mce\themes\advanced\editor_template.js" />
+    <Content Include="Admin_BMS\js\tiny-mce\themes\advanced\editor_template_src.js" />
+    <Content Include="Admin_BMS\js\tiny-mce\themes\advanced\image.htm" />
+    <Content Include="Admin_BMS\js\tiny-mce\themes\advanced\img\colorpicker.jpg" />
+    <Content Include="Admin_BMS\js\tiny-mce\themes\advanced\img\flash.gif" />
+    <Content Include="Admin_BMS\js\tiny-mce\themes\advanced\img\icons.gif" />
+    <Content Include="Admin_BMS\js\tiny-mce\themes\advanced\img\iframe.gif" />
+    <Content Include="Admin_BMS\js\tiny-mce\themes\advanced\img\pagebreak.gif" />
+    <Content Include="Admin_BMS\js\tiny-mce\themes\advanced\img\quicktime.gif" />
+    <Content Include="Admin_BMS\js\tiny-mce\themes\advanced\img\realmedia.gif" />
+    <Content Include="Admin_BMS\js\tiny-mce\themes\advanced\img\shockwave.gif" />
+    <Content Include="Admin_BMS\js\tiny-mce\themes\advanced\img\trans.gif" />
+    <Content Include="Admin_BMS\js\tiny-mce\themes\advanced\img\video.gif" />
+    <Content Include="Admin_BMS\js\tiny-mce\themes\advanced\img\windowsmedia.gif" />
+    <Content Include="Admin_BMS\js\tiny-mce\themes\advanced\js\about.js" />
+    <Content Include="Admin_BMS\js\tiny-mce\themes\advanced\js\anchor.js" />
+    <Content Include="Admin_BMS\js\tiny-mce\themes\advanced\js\charmap.js" />
+    <Content Include="Admin_BMS\js\tiny-mce\themes\advanced\js\color_picker.js" />
+    <Content Include="Admin_BMS\js\tiny-mce\themes\advanced\js\image.js" />
+    <Content Include="Admin_BMS\js\tiny-mce\themes\advanced\js\link.js" />
+    <Content Include="Admin_BMS\js\tiny-mce\themes\advanced\js\source_editor.js" />
+    <Content Include="Admin_BMS\js\tiny-mce\themes\advanced\langs\en.js" />
+    <Content Include="Admin_BMS\js\tiny-mce\themes\advanced\langs\en_dlg.js" />
+    <Content Include="Admin_BMS\js\tiny-mce\themes\advanced\link.htm" />
+    <Content Include="Admin_BMS\js\tiny-mce\themes\advanced\shortcuts.htm" />
+    <Content Include="Admin_BMS\js\tiny-mce\themes\advanced\skins\default\content.css" />
+    <Content Include="Admin_BMS\js\tiny-mce\themes\advanced\skins\default\dialog.css" />
+    <Content Include="Admin_BMS\js\tiny-mce\themes\advanced\skins\default\img\buttons.png" />
+    <Content Include="Admin_BMS\js\tiny-mce\themes\advanced\skins\default\img\items.gif" />
+    <Content Include="Admin_BMS\js\tiny-mce\themes\advanced\skins\default\img\menu_arrow.gif" />
+    <Content Include="Admin_BMS\js\tiny-mce\themes\advanced\skins\default\img\menu_check.gif" />
+    <Content Include="Admin_BMS\js\tiny-mce\themes\advanced\skins\default\img\progress.gif" />
+    <Content Include="Admin_BMS\js\tiny-mce\themes\advanced\skins\default\img\tabs.gif" />
+    <Content Include="Admin_BMS\js\tiny-mce\themes\advanced\skins\default\ui.css" />
+    <Content Include="Admin_BMS\js\tiny-mce\themes\advanced\skins\highcontrast\content.css" />
+    <Content Include="Admin_BMS\js\tiny-mce\themes\advanced\skins\highcontrast\dialog.css" />
+    <Content Include="Admin_BMS\js\tiny-mce\themes\advanced\skins\highcontrast\ui.css" />
+    <Content Include="Admin_BMS\js\tiny-mce\themes\advanced\skins\o2k7\content.css" />
+    <Content Include="Admin_BMS\js\tiny-mce\themes\advanced\skins\o2k7\dialog.css" />
+    <Content Include="Admin_BMS\js\tiny-mce\themes\advanced\skins\o2k7\img\button_bg.png" />
+    <Content Include="Admin_BMS\js\tiny-mce\themes\advanced\skins\o2k7\img\button_bg_black.png" />
+    <Content Include="Admin_BMS\js\tiny-mce\themes\advanced\skins\o2k7\img\button_bg_silver.png" />
+    <Content Include="Admin_BMS\js\tiny-mce\themes\advanced\skins\o2k7\ui.css" />
+    <Content Include="Admin_BMS\js\tiny-mce\themes\advanced\skins\o2k7\ui_black.css" />
+    <Content Include="Admin_BMS\js\tiny-mce\themes\advanced\skins\o2k7\ui_silver.css" />
+    <Content Include="Admin_BMS\js\tiny-mce\themes\advanced\source_editor.htm" />
+    <Content Include="Admin_BMS\js\tiny-mce\themes\simple\editor_template.js" />
+    <Content Include="Admin_BMS\js\tiny-mce\themes\simple\editor_template_src.js" />
+    <Content Include="Admin_BMS\js\tiny-mce\themes\simple\img\icons.gif" />
+    <Content Include="Admin_BMS\js\tiny-mce\themes\simple\langs\en.js" />
+    <Content Include="Admin_BMS\js\tiny-mce\themes\simple\skins\default\content.css" />
+    <Content Include="Admin_BMS\js\tiny-mce\themes\simple\skins\default\ui.css" />
+    <Content Include="Admin_BMS\js\tiny-mce\themes\simple\skins\o2k7\content.css" />
+    <Content Include="Admin_BMS\js\tiny-mce\themes\simple\skins\o2k7\img\button_bg.png" />
+    <Content Include="Admin_BMS\js\tiny-mce\themes\simple\skins\o2k7\ui.css" />
+    <Content Include="Admin_BMS\js\tiny-mce\tiny_mce.js" />
+    <Content Include="Admin_BMS\js\tiny-mce\tiny_mce_popup.js" />
+    <Content Include="Admin_BMS\js\tiny-mce\tiny_mce_src.js" />
+    <Content Include="Admin_BMS\js\tiny-mce\utils\editable_selects.js" />
+    <Content Include="Admin_BMS\js\tiny-mce\utils\form_utils.js" />
+    <Content Include="Admin_BMS\js\tiny-mce\utils\mctabs.js" />
+    <Content Include="Admin_BMS\js\tiny-mce\utils\validate.js" />
+    <Content Include="Admin_BMS\Live_Delete.aspx" />
+    <Content Include="Admin_BMS\Live_Insert.aspx" />
+    <Content Include="Admin_BMS\Live_Update.aspx" />
+    <Content Include="Admin_BMS\News_Delete.aspx" />
+    <Content Include="Admin_BMS\News_Insert.aspx" />
+    <Content Include="Admin_BMS\News_Update.aspx" />
+    <Content Include="Admin_BMS\User_Delete.aspx" />
+    <Content Include="Admin_BMS\User_Select.aspx" />
+    <Content Include="Admin_BMS\User_Update.aspx" />
+    <Content Include="Admin_BMS\NC_Delete.aspx" />
+    <Content Include="Admin_BMS\NCB_Delete.aspx" />
+    <Content Include="App_Data\BFS.mdf" />
+    <Content Include="App_Data\BFS_log.ldf" />
+    <Content Include="bin\AjaxControlToolkit.dll" />
+    <Content Include="bin\AspNet.ScriptManager.jQuery.dll" />
+    <Content Include="bin\AspNet.ScriptManager.jQuery.UI.Combined.dll" />
+    <Content Include="bin\BFS_BLL.dll" />
+    <Content Include="bin\BFS_BLL.pdb" />
+    <Content Include="bin\BFS_DAL.dll" />
+    <Content Include="bin\BFS_DAL.pdb" />
+    <Content Include="bin\BFS_Model.dll" />
+    <Content Include="bin\BFS_Model.pdb" />
+    <Content Include="bin\BFS_UI.dll" />
+    <Content Include="bin\BFS_UI.pdb" />
+    <Content Include="bin\bin.exe" />
+    <Content Include="bin\CKEditor.NET.dll" />
+    <Content Include="bin\CKEditor.NET.pdb" />
+    <Content Include="bin\CKFinder.dll" />
+    <Content Include="bin\DotNetOpenAuth.AspNet.dll" />
+    <Content Include="bin\DotNetOpenAuth.AspNet.xml" />
+    <Content Include="bin\DotNetOpenAuth.Core.dll" />
+    <Content Include="bin\DotNetOpenAuth.Core.xml" />
+    <Content Include="bin\DotNetOpenAuth.OAuth.Consumer.dll" />
+    <Content Include="bin\DotNetOpenAuth.OAuth.Consumer.xml" />
+    <Content Include="bin\DotNetOpenAuth.OAuth.dll" />
+    <Content Include="bin\DotNetOpenAuth.OAuth.xml" />
+    <Content Include="bin\DotNetOpenAuth.OpenId.dll" />
+    <Content Include="bin\DotNetOpenAuth.OpenId.RelyingParty.dll" />
+    <Content Include="bin\DotNetOpenAuth.OpenId.RelyingParty.xml" />
+    <Content Include="bin\DotNetOpenAuth.OpenId.xml" />
+    <Content Include="bin\EntityFramework.dll" />
+    <Content Include="bin\EntityFramework.xml" />
+    <Content Include="bin\Microsoft.AspNet.FriendlyUrls.dll" />
+    <Content Include="bin\Microsoft.AspNet.FriendlyUrls.xml" />
+    <Content Include="bin\Microsoft.AspNet.Membership.OpenAuth.dll" />
+    <Content Include="bin\Microsoft.AspNet.Membership.OpenAuth.xml" />
+    <Content Include="bin\Microsoft.Web.Infrastructure.dll" />
+    <Content Include="bin\System.Web.Providers.dll" />
+    <Content Include="bin\zh-Hans\EntityFramework.resources.dll" />
+    <Content Include="bin\zh-Hans\Microsoft.AspNet.FriendlyUrls.resources.dll" />
+    <Content Include="bin\zh-Hans\Microsoft.AspNet.Membership.OpenAuth.resources.dll" />
+    <Content Include="bin\zh-Hans\System.Web.Providers.resources.dll" />
+    <Content Include="bin\zh-Hans\zh-Hans.exe" />
+    <Content Include="CSS\Strategydetail.css" />
+    <Content Include="Img_UI\mac.jpg" />
+    <Content Include="js\html5.js" />
+    <Content Include="mine\bootstrap-theme.css" />
+    <Content Include="mine\bootstrap.min.css" />
+    <Content Include="mine\font-awesome.min.css" />
+    <Content Include="mine\main.css" />
+    <Content Include="styles\color.css" />
+    <Content Include="styles\flexslider.css" />
+    <Content Include="styles\inner.css" />
+    <Content Include="styles\layout.css" />
+    <Content Include="styles\prettyPhoto.css" />
+    <Content Include="styles\style.css" />
+    <Content Include="Bootstrao\css\bootstrap.min.css" />
+    <Content Include="Bootstrao\js\bootstrap.min.js" />
+    <Content Include="Bootstrao\js\jquery-3.1.1.min.js" />
+    <Content Include="bootstrap-3.3.5-dist\css\bootstrap-theme.css" />
+    <Content Include="bootstrap-3.3.5-dist\css\bootstrap-theme.min.css" />
+    <Content Include="bootstrap-3.3.5-dist\css\bootstrap.css" />
+    <Content Include="bootstrap-3.3.5-dist\css\bootstrap.min.css" />
+    <Content Include="bootstrap-3.3.5-dist\fonts\glyphicons-halflings-regular.svg" />
+    <Content Include="bootstrap-3.3.5-dist\js\bootstrap.js" />
+    <Content Include="bootstrap-3.3.5-dist\js\bootstrap.min.js" />
+    <Content Include="bootstrap-3.3.5-dist\js\jquery-2.1.1.min.js" />
+    <Content Include="bootstrap-3.3.5-dist\js\npm.js" />
+    <Content Include="Content\Site.css" />
+    <Content Include="CSS1\css\ie.css" />
+    <Content Include="CSS1\css\jquery.fancybox-1.3.4.css" />
+    <Content Include="CSS1\css\reset.css" />
+    <Content Include="CSS1\fonts\BebasNeue-webfont.svg" />
+    <Content Include="CSS1\images\avatar.jpg" />
+    <Content Include="CSS1\images\back-top.png" />
+    <Content Include="CSS1\images\big-rating-darkgreen.png" />
+    <Content Include="CSS1\images\big-rating-darkred.png" />
+    <Content Include="CSS1\images\big-rating-green.png" />
+    <Content Include="CSS1\images\big-rating-red.png" />
+    <Content Include="CSS1\images\big-rating-yellow.png" />
+    <Content Include="CSS1\images\blank.gif" />
+    <Content Include="CSS1\images\bottom-overlay.png" />
+    <Content Include="CSS1\images\cons.png" />
+    <Content Include="CSS1\images\delicious.png" />
+    <Content Include="CSS1\images\digg.png" />
+    <Content Include="CSS1\images\facebook-big.png" />
+    <Content Include="CSS1\images\facebook.png" />
+    <Content Include="CSS1\images\fancybox-x.png" />
+    <Content Include="CSS1\images\fancybox-y.png" />
+    <Content Include="CSS1\images\fancybox.png" />
+    <Content Include="CSS1\images\fancy_title_over.png" />
+    <Content Include="CSS1\images\feat1.jpg" />
+    <Content Include="CSS1\images\feat2.jpg" />
+    <Content Include="CSS1\images\feat5.jpg" />
+    <Content Include="CSS1\images\feat6.jpg" />
+    <Content Include="CSS1\images\featured-arrows.png" />
+    <Content Include="CSS1\images\featured-meta.png" />
+    <Content Include="CSS1\images\footer-bg.png" />
+    <Content Include="CSS1\images\footer-bullet.png" />
+    <Content Include="CSS1\images\footer-line.png" />
+    <Content Include="CSS1\images\footer-top-bg.png" />
+    <Content Include="CSS1\images\gallery-big.jpg" />
+    <Content Include="CSS1\images\gallery1-small.jpg" />
+    <Content Include="CSS1\images\gamethumb.png" />
+    <Content Include="CSS1\images\gamethumb2.jpg" />
+    <Content Include="CSS1\images\gamethumb3.jpg" />
+    <Content Include="CSS1\images\gamethumb4.jpg" />
+    <Content Include="CSS1\images\google.png" />
+    <Content Include="CSS1\images\header-banner.png" />
+    <Content Include="CSS1\images\header-bg.png" />
+    <Content Include="CSS1\images\image-200x180.jpg" />
+    <Content Include="CSS1\images\img-bg.png" />
+    <Content Include="CSS1\images\logo.png" />
+    <Content Include="CSS1\images\media-arrows.png" />
+    <Content Include="CSS1\images\mediaarchive.jpg" />
+    <Content Include="CSS1\images\mediaarchive2.jpg" />
+    <Content Include="CSS1\images\mediaarchive3.jpg" />
+    <Content Include="CSS1\images\mediaarchive4.jpg" />
+    <Content Include="CSS1\images\mediathumb.jpg" />
+    <Content Include="CSS1\images\mediathumb2.jpg" />
+    <Content Include="CSS1\images\mediathumb3.jpg" />
+    <Content Include="CSS1\images\myspace.png" />
+    <Content Include="CSS1\images\nav-item-bg.png" />
+    <Content Include="CSS1\images\news-arrows.png" />
+    <Content Include="CSS1\images\newsthumb.jpg" />
+    <Content Include="CSS1\images\newsthumb3.jpg" />
+    <Content Include="CSS1\images\newsthumb4.jpg" />
+    <Content Include="CSS1\images\newsthumb5.jpg" />
+    <Content Include="CSS1\images\newsthumb6.jpg" />
+    <Content Include="CSS1\images\newsthumbside.jpg" />
+    <Content Include="CSS1\images\newsthumbside2.jpg" />
+    <Content Include="CSS1\images\newsthumbside3.jpg" />
+    <Content Include="CSS1\images\newsthumbside4.jpg" />
+    <Content Include="CSS1\images\newsthumbside5.jpg" />
+    <Content Include="CSS1\images\newsvine.png" />
+    <Content Include="CSS1\images\pagination-bg.png" />
+    <Content Include="CSS1\images\panel-bg.png" />
+    <Content Include="CSS1\images\post-img.jpg" />
+    <Content Include="CSS1\images\prev_next.png" />
+    <Content Include="CSS1\images\pros.png" />
+    <Content Include="CSS1\images\quote.png" />
+    <Content Include="CSS1\images\reddit.png" />
+    <Content Include="CSS1\images\review-bg.png" />
+    <Content Include="CSS1\images\review-post-image.jpg" />
+    <Content Include="CSS1\images\review-second-bg.png" />
+    <Content Include="CSS1\images\review-thumb.jpg" />
+    <Content Include="CSS1\images\rss-big.png" />
+    <Content Include="CSS1\images\rss.png" />
+    <Content Include="CSS1\images\score-6.png" />
+    <Content Include="CSS1\images\score-8.png" />
+    <Content Include="CSS1\images\score-9.png" />
+    <Content Include="CSS1\images\score-bg.png" />
+    <Content Include="CSS1\images\screenshot-icon.png" />
+    <Content Include="CSS1\images\search-bg.png" />
+    <Content Include="CSS1\images\section-title.png" />
+    <Content Include="CSS1\images\sidebar-banner.jpg" />
+    <Content Include="CSS1\images\small-rating-darkgreen.png" />
+    <Content Include="CSS1\images\small-rating-darkred.png" />
+    <Content Include="CSS1\images\small-rating-green.png" />
+    <Content Include="CSS1\images\small-rating-red.png" />
+    <Content Include="CSS1\images\small-rating-yellow.png" />
+    <Content Include="CSS1\images\stumbleupon.png" />
+    <Content Include="CSS1\images\technorati.png" />
+    <Content Include="CSS1\images\top-overlay.png" />
+    <Content Include="CSS1\images\twitter-big.png" />
+    <Content Include="CSS1\images\twitter.png" />
+    <Content Include="CSS1\images\ul-dot.png" />
+    <Content Include="CSS1\images\video-icon.png" />
+    <Content Include="CSS1\images\widget-top.png" />
+    <Content Include="CSS1\js\init.js" />
+    <Content Include="CSS1\js\jquery.fancybox-1.3.4.pack.js" />
+    <Content Include="CSS1\js\jquery.scrollTo.js" />
+    <Content Include="CSS1\js\mobilyslider.js" />
+    <Content Include="CSS1\js\scripts.js" />
+    <Content Include="CSS1\js\superfish.js" />
+    <Content Include="CSS1\style.css" />
+    <Content Include="CSS\base.css" />
+    <Content Include="CSS\bootstrap.css" />
+    <Content Include="CSS\css.css" />
+    <Content Include="CSS\font-awesome.min.css" />
+    <Content Include="CSS\font-awesome1.min.css" />
+    <Content Include="CSS\inner.css" />
+    <Content Include="CSS\login_css.css" />
+    <Content Include="CSS\login_input.css" />
+    <Content Include="CSS\Master.css" />
+    <Content Include="CSS\screen.css" />
+    <Content Include="CSS\WebForm1_css.css" />
+    <Content Include="Images\accent.png" />
+    <Content Include="Images\bullet.png" />
+    <Content Include="Images\heroAccent.png" />
+    <Content Include="Images\orderedList0.png" />
+    <Content Include="Images\orderedList1.png" />
+    <Content Include="Images\orderedList2.png" />
+    <Content Include="Images\orderedList3.png" />
+    <Content Include="Images\orderedList4.png" />
+    <Content Include="Images\orderedList5.png" />
+    <Content Include="Images\orderedList6.png" />
+    <Content Include="Images\orderedList7.png" />
+    <Content Include="Images\orderedList8.png" />
+    <Content Include="Images\orderedList9.png" />
+    <Content Include="favicon.ico" />
+    <Content Include="Img_Admin\Img_Admin.exe" />
+    <Content Include="Img_Admin\炉石logo.png" />
+    <Content Include="Img_Admin\炉石传说_标识.png" />
+    <Content Include="Img_Card\地穴领主.png" />
+    <Content Include="Img_Card\鱼人宝宝.png" />
+    <Content Include="Img_Live\201526705073[1].jpg" />
+    <Content Include="Img_Live\Johnny海哥.jpg" />
+    <Content Include="Img_Live\MH丶钢门.jpg" />
+    <Content Include="Img_Live\刘小邦丶.jpg" />
+    <Content Include="Img_Live\可爱的小弱鸡.jpg" />
+    <Content Include="Img_Live\安德罗妮.jpg" />
+    <Content Include="Img_Live\小安丶666.jpg" />
+    <Content Include="Img_Live\斯佑天.jpg" />
+    <Content Include="Img_Live\炉石老方.jpg" />
+    <Content Include="Img_Live\老李没有女粉丝.jpg" />
+    <Content Include="Img_Live\萌太奇.jpg" />
+    <Content Include="Img_Pic\bz\冠军试炼.jpg" />
+    <Content Include="Img_Pic\bz\冰冠堡垒——九职业巫妖王.jpg" />
+    <Content Include="Img_Pic\bz\加基森.jpg" />
+    <Content Include="Img_Pic\bz\卡拉赞.jpg" />
+    <Content Include="Img_Pic\bz\古神低语.jpg" />
+    <Content Include="Img_Pic\bz\安戈洛——大恐龙.jpg" />
+    <Content Include="Img_Pic\bz\探险家协会.jpg" />
+    <Content Include="Img_Pic\bz\炉石酒店.jpg" />
+    <Content Include="Img_Pic\bz\鱼人与海盗.jpg" />
+    <Content Include="Img_Pic\bz\麦迪文.jpg" />
+    <Content Include="Img_Pic\bz\黑石山.jpg" />
+    <Content Include="Img_Pic\yh\九职业巫妖王.jpg" />
+    <Content Include="Img_Pic\yh\元素.jpg" />
+    <Content Include="Img_Pic\yh\大块头.jpg" />
+    <Content Include="Img_Pic\yh\大恐龙.jpg" />
+    <Content Include="Img_Pic\yh\死亡猎手.jpg" />
+    <Content Include="Img_Pic\yh\死亡鞭挞.jpg" />
+    <Content Include="Img_Pic\yh\灵魂复制者.jpg" />
+    <Content Include="Img_Pic\yh\风驰电掣.jpg" />
+    <Content Include="Img_UI\亡灵龙.jpg" />
+    <Content Include="Img_UI\冰封王座.jpg" />
+    <Content Include="Img_UI\吉安娜Q版.gif" />
+    <Content Include="Img_UI\密码.png" />
+    <Content Include="Img_UI\小王子安度因.jpg" />
+    <Content Include="Img_UI\小王子安度因1.jpg" />
+    <Content Include="Img_UI\恶灵骑士.jpg" />
+    <Content Include="Img_UI\炉石logo.png" />
+    <Content Include="Img_UI\炉石传说_标识.png" />
+    <Content Include="Img_UI\用户.png" />
+    <Content Include="Img_UI\登录按键.png" />
+    <Content Include="Img_UI\背景.jpg" />
+    <Content Include="Img_UI\背景色.png" />
+    <Content Include="Img_UI\输入框Y.png" />
+    <Content Include="Img_UI\透明背景.png" />
+    <Content Include="Img_UI\魔法.jpg" />
+    <Content Include="Img_UI\麦迪文.jpg" />
+    <Content Include="Img_Users\黎志峰.jpg" />
+    <Content Include="Img_Users\默认头像.png" />
+    <Content Include="Login.aspx" />
+    <Content Include="News_LD.aspx" />
+    <Content Include="News_read.aspx" />
+    <Content Include="obj\Debug\BFS_UI.csproj.FileListAbsolute.txt" />
+    <Content Include="obj\Debug\BFS_UI.dll" />
+    <Content Include="obj\Debug\BFS_UI.pdb" />
+    <Content Include="Pic_BZ.aspx" />
+    <Content Include="registration.aspx" />
+    <Content Include="Scripts\Factory.js" />
+    <Content Include="Scripts\jquery-1.10.2.min.js" />
+    <Content Include="Scripts\jquery-browser.js" />
+    <Content Include="Scripts\jquery.form.min.js" />
+    <Content Include="Scripts\jquery.fullbg.js" />
+    <Content Include="Scripts\jquery.fullbg.min.js" />
+    <Content Include="Scripts\jquery.jcrop.min.js" />
+    <Content Include="Scripts\jquery.jqzoom.js" />
+    <Content Include="Scripts\jquery.KinSlideshow-1.2.1.min.js" />
+    <Content Include="Scripts\jquery.lazyload.min.js" />
+    <Content Include="Scripts\jquery.min.js" />
+    <Content Include="Scripts\jquery.nicescroll.js" />
+    <Content Include="Scripts\jquery.pagination.js" />
+    <Content Include="Scripts\jquery.qqFace.js" />
+    <Content Include="Scripts\json2.js" />
+    <Content Include="Scripts\pbl.js" />
+    <Content Include="Scripts\pbl2.js" />
+    <Content Include="Scripts\PCASClass.js" />
+    <Content Include="Scripts\Validform_v5.3.2_min.js" />
+    <Content Include="BFS_Web.aspx" />
+    <Content Include="Admin_BMS\Admin.aspx" />
+    <Content Include="News_ZT.aspx" />
+    <Content Include="News_BB.aspx" />
+    <Content Include="Picture.aspx" />
+    <Content Include="Pic_YH.aspx" />
+    <Content Include="Live.aspx" />
+    <Content Include="Action.aspx" />
+    <Content Include="Card.aspx" />
+    <Content Include="Card_Img.aspx" />
+    <Content Include="Blog_index.aspx" />
+    <Content Include="Users_index.aspx" />
+    <Content Include="BBS_read.aspx" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="BFS_MasterPage.Master" />
+    <Content Include="Admin_BMS\Admin.Master" />
+    <Content Include="Web.sitemap">
+      <SubType>Designer</SubType>
+    </Content>
+    <Content Include="packages.config" />
+    <Content Include="bin\BFS_UI.dll.config" />
+    <Content Include="bootstrap-3.3.5-dist\css\bootstrap-theme.css.map" />
+    <Content Include="bootstrap-3.3.5-dist\css\bootstrap.css.map" />
+    <Content Include="bootstrap-3.3.5-dist\fonts\glyphicons-halflings-regular.eot" />
+    <Content Include="bootstrap-3.3.5-dist\fonts\glyphicons-halflings-regular.ttf" />
+    <Content Include="bootstrap-3.3.5-dist\fonts\glyphicons-halflings-regular.woff" />
+    <Content Include="bootstrap-3.3.5-dist\fonts\glyphicons-halflings-regular.woff2" />
+    <Content Include="obj\Debug\BFS_UI.csprojResolveAssemblyReference.cache" />
+    <Content Include="obj\Debug\DesignTimeResolveAssemblyReferences.cache" />
+    <Content Include="obj\Debug\DesignTimeResolveAssemblyReferencesInput.cache" />
+    <Content Include="Admin_BMS\img\pretty-photo\.DS_Store" />
+    <Content Include="Admin_BMS\img\pretty-photo\fullscreen\.DS_Store" />
+    <Content Include="CSS1\fonts\BebasNeue-webfont.eot" />
+    <Content Include="CSS1\fonts\BebasNeue-webfont.ttf" />
+    <Content Include="CSS1\fonts\BebasNeue-webfont.woff" />
+    <Content Include="CSS1\fonts\BebasNeue-webfont_d4725abf.eot" />
+    <None Include="Scripts\_references.js" />
+    <Content Include="Web.config" />
+    <None Include="Web.Debug.config">
+      <DependentUpon>Web.config</DependentUpon>
+    </None>
+    <None Include="Web.Release.config">
+      <DependentUpon>Web.config</DependentUpon>
+    </None>
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="about.aspx.cs">
+      <DependentUpon>about.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="about.aspx.designer.cs">
+      <DependentUpon>about.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Admin_BMS\Admin.Master.cs">
+      <DependentUpon>Admin.Master</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Admin_BMS\Admin.Master.designer.cs">
+      <DependentUpon>Admin.Master</DependentUpon>
+    </Compile>
+    <Compile Include="Admin_BMS\Action_Delete.aspx.cs">
+      <DependentUpon>Action_Delete.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Admin_BMS\Action_Delete.aspx.designer.cs">
+      <DependentUpon>Action_Delete.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Admin_BMS\Action_Insert.aspx.cs">
+      <DependentUpon>Action_Insert.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Admin_BMS\Action_Insert.aspx.designer.cs">
+      <DependentUpon>Action_Insert.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Admin_BMS\Action_Update.aspx.cs">
+      <DependentUpon>Action_Update.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Admin_BMS\Action_Update.aspx.designer.cs">
+      <DependentUpon>Action_Update.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Admin_BMS\BBS_Comment.aspx.cs">
+      <DependentUpon>BBS_Comment.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Admin_BMS\BBS_Comment.aspx.designer.cs">
+      <DependentUpon>BBS_Comment.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Admin_BMS\BBS_Delete.aspx.cs">
+      <DependentUpon>BBS_Delete.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Admin_BMS\BBS_Delete.aspx.designer.cs">
+      <DependentUpon>BBS_Delete.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Admin_BMS\BBS_Comment_Back.aspx.cs">
+      <DependentUpon>BBS_Comment_Back.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Admin_BMS\BBS_Comment_Back.aspx.designer.cs">
+      <DependentUpon>BBS_Comment_Back.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Admin_BMS\Card_Delete.aspx.cs">
+      <DependentUpon>Card_Delete.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Admin_BMS\Card_Delete.aspx.designer.cs">
+      <DependentUpon>Card_Delete.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Admin_BMS\Card_Insert.aspx.cs">
+      <DependentUpon>Card_Insert.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Admin_BMS\Card_Insert.aspx.designer.cs">
+      <DependentUpon>Card_Insert.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Admin_BMS\Card_group.aspx.cs">
+      <DependentUpon>Card_group.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Admin_BMS\Card_group.aspx.designer.cs">
+      <DependentUpon>Card_group.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Admin_BMS\Card_Update.aspx.cs">
+      <DependentUpon>Card_Update.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Admin_BMS\Card_Update.aspx.designer.cs">
+      <DependentUpon>Card_Update.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Admin_BMS\Img_Delete.aspx.cs">
+      <DependentUpon>Img_Delete.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Admin_BMS\Img_Delete.aspx.designer.cs">
+      <DependentUpon>Img_Delete.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Admin_BMS\Img_Insert.aspx.cs">
+      <DependentUpon>Img_Insert.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Admin_BMS\Img_Insert.aspx.designer.cs">
+      <DependentUpon>Img_Insert.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Admin_BMS\Img_Update.aspx.cs">
+      <DependentUpon>Img_Update.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Admin_BMS\Img_Update.aspx.designer.cs">
+      <DependentUpon>Img_Update.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Admin_BMS\Live_Delete.aspx.cs">
+      <DependentUpon>Live_Delete.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Admin_BMS\Live_Delete.aspx.designer.cs">
+      <DependentUpon>Live_Delete.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Admin_BMS\Live_Insert.aspx.cs">
+      <DependentUpon>Live_Insert.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Admin_BMS\Live_Insert.aspx.designer.cs">
+      <DependentUpon>Live_Insert.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Admin_BMS\Live_Update.aspx.cs">
+      <DependentUpon>Live_Update.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Admin_BMS\Live_Update.aspx.designer.cs">
+      <DependentUpon>Live_Update.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Admin_BMS\News_Delete.aspx.cs">
+      <DependentUpon>News_Delete.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Admin_BMS\News_Delete.aspx.designer.cs">
+      <DependentUpon>News_Delete.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Admin_BMS\News_Insert.aspx.cs">
+      <DependentUpon>News_Insert.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Admin_BMS\News_Insert.aspx.designer.cs">
+      <DependentUpon>News_Insert.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Admin_BMS\News_Update.aspx.cs">
+      <DependentUpon>News_Update.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Admin_BMS\News_Update.aspx.designer.cs">
+      <DependentUpon>News_Update.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Admin_BMS\User_Delete.aspx.cs">
+      <DependentUpon>User_Delete.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Admin_BMS\User_Delete.aspx.designer.cs">
+      <DependentUpon>User_Delete.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Admin_BMS\User_Select.aspx.cs">
+      <DependentUpon>User_Select.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Admin_BMS\User_Select.aspx.designer.cs">
+      <DependentUpon>User_Select.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Admin_BMS\User_Update.aspx.cs">
+      <DependentUpon>User_Update.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Admin_BMS\User_Update.aspx.designer.cs">
+      <DependentUpon>User_Update.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Admin_BMS\NC_Delete.aspx.cs">
+      <DependentUpon>NC_Delete.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Admin_BMS\NC_Delete.aspx.designer.cs">
+      <DependentUpon>NC_Delete.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Admin_BMS\NCB_Delete.aspx.cs">
+      <DependentUpon>NCB_Delete.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Admin_BMS\NCB_Delete.aspx.designer.cs">
+      <DependentUpon>NCB_Delete.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="BFS_MasterPage.Master.cs">
+      <DependentUpon>BFS_MasterPage.Master</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="BFS_MasterPage.Master.designer.cs">
+      <DependentUpon>BFS_MasterPage.Master</DependentUpon>
+    </Compile>
+    <Compile Include="Login.aspx.cs">
+      <DependentUpon>Login.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Login.aspx.designer.cs">
+      <DependentUpon>Login.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="News_LD.aspx.cs">
+      <DependentUpon>News_LD.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="News_LD.aspx.designer.cs">
+      <DependentUpon>News_LD.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="News_read.aspx.cs">
+      <DependentUpon>News_read.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="News_read.aspx.designer.cs">
+      <DependentUpon>News_read.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Pic_BZ.aspx.cs">
+      <DependentUpon>Pic_BZ.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Pic_BZ.aspx.designer.cs">
+      <DependentUpon>Pic_BZ.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="registration.aspx.cs">
+      <DependentUpon>registration.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="registration.aspx.designer.cs">
+      <DependentUpon>registration.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="BFS_Web.aspx.cs">
+      <DependentUpon>BFS_Web.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="BFS_Web.aspx.designer.cs">
+      <DependentUpon>BFS_Web.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Admin_BMS\Admin.aspx.cs">
+      <DependentUpon>Admin.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Admin_BMS\Admin.aspx.designer.cs">
+      <DependentUpon>Admin.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="News_ZT.aspx.cs">
+      <DependentUpon>News_ZT.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="News_ZT.aspx.designer.cs">
+      <DependentUpon>News_ZT.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="News_BB.aspx.cs">
+      <DependentUpon>News_BB.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="News_BB.aspx.designer.cs">
+      <DependentUpon>News_BB.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Picture.aspx.cs">
+      <DependentUpon>Picture.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Picture.aspx.designer.cs">
+      <DependentUpon>Picture.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Pic_YH.aspx.cs">
+      <DependentUpon>Pic_YH.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Pic_YH.aspx.designer.cs">
+      <DependentUpon>Pic_YH.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Live.aspx.cs">
+      <DependentUpon>Live.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Live.aspx.designer.cs">
+      <DependentUpon>Live.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Action.aspx.cs">
+      <DependentUpon>Action.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Action.aspx.designer.cs">
+      <DependentUpon>Action.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Card.aspx.cs">
+      <DependentUpon>Card.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Card.aspx.designer.cs">
+      <DependentUpon>Card.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Card_Img.aspx.cs">
+      <DependentUpon>Card_Img.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Card_Img.aspx.designer.cs">
+      <DependentUpon>Card_Img.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Blog_index.aspx.cs">
+      <DependentUpon>Blog_index.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Blog_index.aspx.designer.cs">
+      <DependentUpon>Blog_index.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Users_index.aspx.cs">
+      <DependentUpon>Users_index.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Users_index.aspx.designer.cs">
+      <DependentUpon>Users_index.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="BBS_read.aspx.cs">
+      <DependentUpon>BBS_read.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="BBS_read.aspx.designer.cs">
+      <DependentUpon>BBS_read.aspx</DependentUpon>
+    </Compile>
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="Actions\" />
+    <Folder Include="Admin_BMS\js\tiny-mce\plugins\spellchecker\classes\utils\" />
+    <Folder Include="Admin_BMS\js\tiny-mce\plugins\spellchecker\includes\" />
+    <Folder Include="Bootstrao\fonts\" />
+    <Folder Include="ckeditor\" />
+    <Folder Include="ckfinder\" />
+    <Folder Include="Img_Act\" />
+    <Folder Include="Img_BBS\" />
+    <Folder Include="Img_News\" />
+    <Folder Include="obj\Debug\TempPE\" />
+  </ItemGroup>
+  <ItemGroup>
+    <WCFMetadata Include="Service References\" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\BFS_BLL\BFS_BLL.csproj">
+      <Project>{6f5ea11e-4d55-40f5-835e-2a5ba3bd219f}</Project>
+      <Name>BFS_BLL</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\BFS_Model\BFS_Model.csproj">
+      <Project>{d4a99b03-2067-4d65-a23c-5638eb19177c}</Project>
+      <Name>BFS_Model</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <PropertyGroup>
+    <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>
+    <VSToolsPath Condition="'$(VSToolsPath)' == ''">$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v$(VisualStudioVersion)</VSToolsPath>
+  </PropertyGroup>
+  <Import Project="$(MSBuildBinPath)\Microsoft.CSharp.targets" />
+  <Import Project="$(VSToolsPath)\WebApplications\Microsoft.WebApplication.targets" Condition="'$(VSToolsPath)' != ''" />
+  <Import Project="$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v10.0\WebApplications\Microsoft.WebApplication.targets" Condition="false" />
+  <ProjectExtensions>
+    <VisualStudio>
+      <FlavorProperties GUID="{349c5851-65df-11da-9384-00065b846f21}">
+        <WebProjectProperties>
+          <UseIIS>True</UseIIS>
+          <AutoAssignPort>True</AutoAssignPort>
+          <DevelopmentServerPort>0</DevelopmentServerPort>
+          <DevelopmentServerVPath>/</DevelopmentServerVPath>
+          <IISUrl>http://localhost:50626/</IISUrl>
+          <NTLMAuthentication>False</NTLMAuthentication>
+          <UseCustomServer>False</UseCustomServer>
+          <CustomServerUrl>
+          </CustomServerUrl>
+          <SaveServerSettingsInUserFile>False</SaveServerSettingsInUserFile>
+        </WebProjectProperties>
+      </FlavorProperties>
+    </VisualStudio>
+  </ProjectExtensions>
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>
